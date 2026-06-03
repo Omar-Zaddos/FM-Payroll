@@ -1,6 +1,11 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FM Packages Pvt Ltd — Payroll System</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0a0f1e;--bg2:#0d1528;--bg3:#111d36;--card:#0e1930;
@@ -104,26 +109,17 @@ tbody tr:last-child{border-bottom:none}
 .eobi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .eobi-item label{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.5px}
 .eobi-item p{font-size:14px;font-weight:600;color:var(--purple);font-family:var(--mono);margin-top:2px}
-
-/* ===== CALENDAR ===== */
 .cal-wrap{position:relative;display:inline-block;width:100%}
 .cal-input{background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:var(--font);font-size:13px;padding:8px 11px;outline:none;width:100%;cursor:pointer;text-align:left}
 .cal-input:focus{border-color:var(--blue)}
 .calendar{position:absolute;top:calc(100% + 6px);left:0;z-index:600;background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:16px;width:300px;box-shadow:0 12px 40px rgba(0,0,0,.6)}
-
-/* top navigation bar */
 .cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:4px}
 .cal-nav-btn{background:var(--bg3);border:1px solid var(--border);border-radius:7px;color:var(--text);cursor:pointer;width:28px;height:28px;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .15s}
 .cal-nav-btn:hover{border-color:var(--blue);color:var(--blue2)}
-.cal-nav-btn:disabled{opacity:.3;cursor:default}
-
-/* header pill: "April 2026" — clicking toggles view */
 .cal-header-pill{display:flex;align-items:center;gap:0;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;overflow:hidden;flex:1;margin:0 4px}
 .cal-header-part{padding:5px 10px;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s;color:var(--text);flex:1;text-align:center}
 .cal-header-part:hover{background:rgba(59,158,255,.15);color:var(--blue2)}
 .cal-header-divider{width:1px;background:var(--border2);align-self:stretch}
-
-/* days view */
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
 .cal-dow{font-size:9px;color:var(--text2);text-align:center;padding:4px 0;font-weight:600;letter-spacing:.3px}
 .cal-day{font-size:12px;text-align:center;padding:6px 3px;border-radius:7px;cursor:pointer;color:var(--text2);transition:all .12s;font-family:var(--mono);line-height:1}
@@ -133,24 +129,16 @@ tbody tr:last-child{border-bottom:none}
 .cal-day.sunday{color:rgba(255,92,122,.8)}
 .cal-day.sunday.selected{background:var(--red);color:#fff}
 .cal-day.other-month{opacity:.25;pointer-events:none}
-.cal-day.empty{cursor:default;pointer-events:none}
-
-/* month picker grid */
 .cal-month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .cal-month-item{font-size:12px;text-align:center;padding:9px 4px;border-radius:8px;cursor:pointer;color:var(--text2);transition:all .12s;border:1px solid transparent}
 .cal-month-item:hover{background:var(--bg3);color:var(--text);border-color:var(--border)}
 .cal-month-item.selected{background:var(--blue);color:#fff;border-color:var(--blue)}
 .cal-month-item.current{border-color:var(--border2);color:var(--text)}
-
-/* year picker grid */
 .cal-year-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .cal-year-item{font-size:12px;text-align:center;padding:8px 3px;border-radius:8px;cursor:pointer;color:var(--text2);transition:all .12s;font-family:var(--mono);border:1px solid transparent}
 .cal-year-item:hover{background:var(--bg3);color:var(--text);border-color:var(--border)}
 .cal-year-item.selected{background:var(--blue);color:#fff;border-color:var(--blue)}
 .cal-year-item.current{border-color:var(--border2);color:var(--text)}
-.cal-year-item.out-range{opacity:.4}
-
-/* Modal */
 .modal-overlay{position:fixed;inset:0;background:rgba(5,10,25,.88);display:flex;align-items:center;justify-content:center;z-index:200;backdrop-filter:blur(4px)}
 .modal{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:26px;width:600px;max-width:96vw;max-height:90vh;overflow-y:auto}
 .modal-title{font-size:17px;font-weight:600;margin-bottom:18px}
@@ -164,7 +152,6 @@ tbody tr:last-child{border-bottom:none}
 .form-group input:focus,.form-group select:focus{border-color:var(--blue)}
 .form-group .hint{font-size:10px;color:var(--text2);margin-top:2px}
 .modal-footer{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
-
 .toggle-wrap{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2)}
 .toggle{position:relative;width:38px;height:20px;cursor:pointer}
 .toggle input{opacity:0;width:0;height:0;position:absolute}
@@ -176,15 +163,17 @@ tbody tr:last-child{border-bottom:none}
 .toast.show{transform:translateY(0);opacity:1}
 .toast-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
 .hidden{display:none!important}
+@media(max-width:768px){.kpi-row{grid-template-columns:repeat(2,1fr)}.days-grid{grid-template-columns:repeat(4,1fr)}.payslip-employee{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}}
 </style>
-
+</head>
+<body>
 <div class="app">
   <div class="topbar">
     <div class="topbar-left">
       <div class="logo-mark">FM</div>
       <div>
         <div class="company-name">FM Packages Pvt Ltd</div>
-        <div class="company-sub">PAYROLL MANAGEMENT SYSTEM v3</div>
+        <div class="company-sub">PAYROLL MANAGEMENT SYSTEM</div>
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:8px">
@@ -193,7 +182,6 @@ tbody tr:last-child{border-bottom:none}
       <button class="btn btn-gold btn-sm" onclick="openAddEmp()">+ Add Employee</button>
     </div>
   </div>
-
   <div class="tabs">
     <div class="tab active" onclick="switchTab('dashboard',this)">Dashboard</div>
     <div class="tab" onclick="switchTab('attendance',this)">Attendance Entry</div>
@@ -203,7 +191,6 @@ tbody tr:last-child{border-bottom:none}
     <div class="tab" onclick="switchTab('payslip',this)">Pay Slip</div>
     <div class="tab" onclick="switchTab('report',this)">Reports</div>
   </div>
-
   <div class="content">
     <div id="tab-dashboard">
       <div class="kpi-row" id="kpiRow"></div>
@@ -221,7 +208,6 @@ tbody tr:last-child{border-bottom:none}
         </div>
       </div>
     </div>
-
     <div id="tab-attendance" class="hidden">
       <div class="toolbar">
         <select id="attEmpSelect" onchange="loadAttendance()"><option value="">— Select Employee —</option></select>
@@ -234,7 +220,6 @@ tbody tr:last-child{border-bottom:none}
       </div>
       <div id="attendanceGrid"></div>
     </div>
-
     <div id="tab-payroll" class="hidden">
       <div class="toolbar">
         <input type="text" id="searchEmp" placeholder="Search…" oninput="renderPayrollTable()" style="width:160px">
@@ -252,7 +237,6 @@ tbody tr:last-child{border-bottom:none}
       </div>
       <div id="payrollTotals" style="margin-top:12px;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px;font-size:13px;display:flex;gap:20px;flex-wrap:wrap"></div>
     </div>
-
     <div id="tab-eobi" class="hidden">
       <div class="eobi-info">
         <h4>⚡ EOBI & PESSI Rates — Pakistan</h4>
@@ -267,8 +251,8 @@ tbody tr:last-child{border-bottom:none}
         <div style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap;align-items:center">
           <label class="toggle-wrap"><label class="toggle"><input type="checkbox" id="eobiEnabled" checked onchange="renderEobiTable()"><span class="toggle-slider"></span></label>EOBI</label>
           <label class="toggle-wrap"><label class="toggle"><input type="checkbox" id="pessiEnabled" checked onchange="renderEobiTable()"><span class="toggle-slider"></span></label>PESSI</label>
-          <div style="display:flex;align-items:center;gap:5px"><span style="font-size:12px;color:var(--text2)">EOBI Emp%</span><input type="number" id="eobiEmpPct" value="5" min="0" max="100" step="0.5" style="width:60px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--text);padding:4px 7px;font-size:12px;outline:none" onchange="renderEobiTable()"></div>
-          <div style="display:flex;align-items:center;gap:5px"><span style="font-size:12px;color:var(--text2)">PESSI Emp%</span><input type="number" id="pessiEmpPct" value="1" min="0" max="100" step="0.5" style="width:60px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--text);padding:4px 7px;font-size:12px;outline:none" onchange="renderEobiTable()"></div>
+          <div style="display:flex;align-items:center;gap:5px"><span style="font-size:12px;color:var(--text2)">EOBI%</span><input type="number" id="eobiEmpPct" value="5" min="0" max="100" step="0.5" style="width:60px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--text);padding:4px 7px;font-size:12px;outline:none" onchange="renderEobiTable()"></div>
+          <div style="display:flex;align-items:center;gap:5px"><span style="font-size:12px;color:var(--text2)">PESSI%</span><input type="number" id="pessiEmpPct" value="1" min="0" max="100" step="0.5" style="width:60px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--text);padding:4px 7px;font-size:12px;outline:none" onchange="renderEobiTable()"></div>
           <select id="eobiMonthSel" onchange="renderEobiTable()" style="background:var(--card);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:12px;padding:5px 9px;outline:none"></select>
           <select id="eobiYearSel" onchange="renderEobiTable()" style="background:var(--card);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:12px;padding:5px 9px;outline:none"></select>
         </div>
@@ -281,7 +265,6 @@ tbody tr:last-child{border-bottom:none}
       </div>
       <div id="eobiTotals" style="margin-top:12px;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px;font-size:13px;display:flex;gap:20px;flex-wrap:wrap"></div>
     </div>
-
     <div id="tab-bank" class="hidden">
       <div class="toolbar">
         <select id="bankFilterDept" onchange="renderBankList()"><option value="">All Departments</option></select>
@@ -298,7 +281,6 @@ tbody tr:last-child{border-bottom:none}
       </div>
       <div id="bankTotals" style="margin-top:12px;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px;font-size:13px;display:flex;gap:20px;flex-wrap:wrap"></div>
     </div>
-
     <div id="tab-payslip" class="hidden">
       <div class="toolbar">
         <select id="slipEmpSelect" onchange="renderPayslip()"><option value="">— Select Employee —</option></select>
@@ -308,7 +290,6 @@ tbody tr:last-child{border-bottom:none}
       </div>
       <div id="payslipContent" style="margin-top:14px"></div>
     </div>
-
     <div id="tab-report" class="hidden">
       <div class="section-title">Summary Analytics</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px" id="reportGrid"></div>
@@ -362,8 +343,8 @@ tbody tr:last-child{border-bottom:none}
         <div class="form-group"><label>Other Deduction (PKR)</label><input id="fOtherDed" type="number" placeholder="0"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>EOBI Applicable</label><select id="fEobi"><option value="1">Yes</option><option value="0">No</option></select><span class="hint">5% of min wage (PKR 32,000)</span></div>
-        <div class="form-group"><label>PESSI Applicable</label><select id="fPessi"><option value="1">Yes</option><option value="0">No</option></select><span class="hint">1% employee + 6% employer</span></div>
+        <div class="form-group"><label>EOBI Applicable</label><select id="fEobi"><option value="1">Yes</option><option value="0">No</option></select><span class="hint">5% of min wage PKR 32,000</span></div>
+        <div class="form-group"><label>PESSI Applicable</label><select id="fPessi"><option value="1">Yes</option><option value="0">No</option></select><span class="hint">1% emp + 6% employer</span></div>
       </div>
     </div>
     <div id="mt-bankd" class="hidden">
@@ -401,25 +382,22 @@ tbody tr:last-child{border-bottom:none}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
-// ============================================================
-//  CONSTANTS
-// ============================================================
 const DEPARTMENTS=['Boiler','Plant','Lifter','Manual','Printing','Folding','Dispatch','Mechanical','Electrical','Quality','Store','Administration','HR','Canteen'];
 const DESIGNATIONS=['Incharge','Operator','Asst Operator','Helper','Accountant','General Manager','Sales Manager','MD','HR Manager','Store Keeper','Quality Inspector','Electrician','Mechanic','Supervisor','Driver','Security Guard','Cleaner','Other'];
 const MONTH_NAMES=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const MONTH_SHORT=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const DAYS_NAMES=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const EOBI_MIN_WAGE=32000;
-
-// ============================================================
-//  DATA
-// ============================================================
+const dIM=(y,m)=>new Date(y,m,0).getDate();
+const mStart=(y,m)=>new Date(y,m-1,1).getDay();
+const attKey=(e,y,m,d)=>`${e}-${y}-${m}-${d}`;
+const calcOT=(i,o,h)=>{if(!i||!o)return 0;const t=s=>{const[a,b]=s.split(':').map(Number);return a*60+(b||0)};let d=t(o)-t(i);if(d<0)d+=1440;return Math.round(Math.max(0,d/60-h)*10)/10};
 let employees=[
   {id:1,name:'Muhammad Tanvir',father:'Talib Hussain',code:'01-0615',cnic:'',dept:'Boiler',desig:'Incharge',salary:36000,dutyHrs:8,allowance:3000,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2015-06-01',bank:'HBL – Habib Bank',accNo:'',iban:'',accTitle:'Muhammad Tanvir',branch:'',payMode:'Bank Transfer'},
   {id:2,name:'Naveed Hussain',father:'Talib Hussain',code:'02-0515',cnic:'',dept:'Boiler',desig:'Operator',salary:36000,dutyHrs:8,allowance:3000,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2015-05-24',bank:'UBL – United Bank',accNo:'',iban:'',accTitle:'Naveed Hussain',branch:'',payMode:'Bank Transfer'},
   {id:3,name:'Khizer Nawaz',father:'Umar Khitab',code:'12-1022',cnic:'',dept:'Boiler',desig:'Operator',salary:36000,dutyHrs:8,allowance:1000,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2022-10-04',bank:'MCB Bank',accNo:'',iban:'',accTitle:'Khizer Nawaz',branch:'',payMode:'Bank Transfer'},
-  {id:4,name:'Bakht Taj',father:'Dilawar Khan',code:'10-1023',cnic:'',dept:'Boiler',desig:'Helper',salary:36000,dutyHrs:8,allowance:1000,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2023-10-16',bank:'Cash / Manual',accNo:'',iban:'',accTitle:'Bakht Taj',branch:'',payMode:'Cash'},
-  {id:5,name:'Ishaq',father:'Haqiq Zar',code:'09-0424',cnic:'',dept:'Boiler',desig:'Helper',salary:36000,dutyHrs:8,allowance:0,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2024-04-27',bank:'Cash / Manual',accNo:'',iban:'',accTitle:'Ishaq',branch:'',payMode:'Cash'},
+  {id:4,name:'Bakht Taj',father:'Dilawar Khan',code:'10-1023',cnic:'',dept:'Boiler',desig:'Helper',salary:36000,dutyHrs:8,allowance:1000,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2023-10-16',bank:'Cash / Manual',accNo:'',iban:'',accTitle:'',branch:'',payMode:'Cash'},
+  {id:5,name:'Ishaq',father:'Haqiq Zar',code:'09-0424',cnic:'',dept:'Boiler',desig:'Helper',salary:36000,dutyHrs:8,allowance:0,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2024-04-27',bank:'Cash / Manual',accNo:'',iban:'',accTitle:'',branch:'',payMode:'Cash'},
   {id:6,name:'Noor Ul Hassan',father:'Ahmed Hassan',code:'05-0624',cnic:'',dept:'Boiler',desig:'Helper',salary:36000,dutyHrs:8,allowance:0,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2024-06-21',bank:'Cash / Manual',accNo:'',iban:'',accTitle:'',branch:'',payMode:'Cash'},
   {id:7,name:'Abubakar Sadiqque',father:'Zain Badshah',code:'04-0724',cnic:'',dept:'Boiler',desig:'Helper',salary:36000,dutyHrs:8,allowance:0,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2024-07-10',bank:'Cash / Manual',accNo:'',iban:'',accTitle:'',branch:'',payMode:'Cash'},
   {id:8,name:'Muhammad Adnan',father:'Shah Alam',code:'01-0925',cnic:'',dept:'Boiler',desig:'Helper',salary:36000,dutyHrs:8,allowance:0,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2025-09-18',bank:'Cash / Manual',accNo:'',iban:'',accTitle:'',branch:'',payMode:'Cash'},
@@ -441,627 +419,58 @@ let employees=[
   {id:24,name:'Aqib Mahmood',father:'Muhammad Parvez',code:'12-0922',cnic:'',dept:'Lifter',desig:'Operator',salary:36000,dutyHrs:8,allowance:0,deduction:0,otherDed:0,eobi:1,pessi:1,joinDate:'2022-09-12',bank:'MCB Bank',accNo:'',iban:'',accTitle:'Aqib Mahmood',branch:'',payMode:'Bank Transfer'},
 ];
 let attendance={},nextId=25;
-
-// ============================================================
-//  HELPERS
-// ============================================================
-const dIM=(y,m)=>new Date(y,m,0).getDate();
-const mStart=(y,m)=>new Date(y,m-1,1).getDay();
-const attKey=(e,y,m,d)=>`${e}-${y}-${m}-${d}`;
-const calcOT=(i,o,h)=>{if(!i||!o)return 0;const t=s=>{const[a,b]=s.split(':').map(Number);return a*60+(b||0)};let d=t(o)-t(i);if(d<0)d+=1440;return Math.round(Math.max(0,d/60-h)*10)/10};
-function getEobi(emp){
-  const en=document.getElementById('eobiEnabled')?.checked??true;
-  const pn=document.getElementById('pessiEnabled')?.checked??true;
-  const ep=parseFloat(document.getElementById('eobiEmpPct')?.value||5)/100;
-  const pp=parseFloat(document.getElementById('pessiEmpPct')?.value||1)/100;
-  const eobiEmp=en&&emp.eobi?Math.round(EOBI_MIN_WAGE*ep):0;
-  const eobiEr=en&&emp.eobi?Math.round(EOBI_MIN_WAGE*0.05):0;
-  const pessiEmp=pn&&emp.pessi?Math.round(emp.salary*pp):0;
-  const pessiEr=pn&&emp.pessi?Math.round(emp.salary*0.06):0;
-  return{eobiEmp,eobiEr,pessiEmp,pessiEr,totalEmpDed:eobiEmp+pessiEmp};
-}
-function getPayData(empId,y,m){
-  const emp=employees.find(e=>e.id==empId);if(!emp)return null;
-  const days=dIM(y,m),sd=mStart(y,m);
-  let present=0,sundays=0,leaves=0,absents=0,otHrs=0;
-  for(let d=1;d<=days;d++){
-    const dow=(sd+d-1)%7,isSun=dow===0;
-    const rec=attendance[attKey(empId,y,m,d)]||{};
-    if(isSun){sundays++;continue;}
-    const st=rec.status||(rec.inTime?'P':'');
-    if(st==='P'||(rec.inTime&&!st))present++;
-    else if(st==='A')absents++;
-    else if(st==='L')leaves++;
-    if((rec.ot||0)>0)otHrs+=rec.ot;
-  }
-  const workDays=days-sundays,payDays=workDays-absents;
-  const dailyRate=emp.salary/workDays;
-  const salAmt=dailyRate*payDays;
-  const hrRate=emp.salary/(workDays*emp.dutyHrs);
-  const otAmt=otHrs*hrRate*1.5;
-  const{eobiEmp,eobiEr,pessiEmp,pessiEr,totalEmpDed}=getEobi(emp);
-  const net=salAmt+otAmt+(emp.allowance||0)-(emp.deduction||0)-(emp.otherDed||0)-totalEmpDed;
-  return{present,sundays,leaves,absents,otHrs:Math.round(otHrs*10)/10,payDays,salAmt:Math.round(salAmt),otAmt:Math.round(otAmt),net:Math.round(net),workDays,totalDays:days,dailyRate:Math.round(dailyRate),eobiEmp,eobiEr,pessiEmp,pessiEr,totalEmpDed};
-}
-
-// ============================================================
-//  CALENDAR — full 3-view: days → months → years
-// ============================================================
-let calStates={};   // { calId: { view, y, m, hiddenId, displayId } }
-
-function openCal(calId, evt){
-  evt && evt.stopPropagation();
-  // close all others
-  document.querySelectorAll('.calendar').forEach(c=>{ if(c.id!==calId) c.classList.add('hidden'); });
-  const cal=document.getElementById(calId);
-  if(!calStates[calId]){
-    const now=new Date();
-    calStates[calId]={view:'days',y:now.getFullYear(),m:now.getMonth()+1};
-  }
-  cal.classList.toggle('hidden');
-  if(!cal.classList.contains('hidden')) _renderCal(calId);
-}
-
-function _renderCal(id){
-  const st=calStates[id]; if(!st) return;
-  const cal=document.getElementById(id);
-  // determine hiddenId / displayId from calId convention: 'joinCal' → fJoin / fJoinDisplay
-  const mapping={joinCal:{h:'fJoin',d:'fJoinDisplay'}};
-  const {h:hiddenId='', d:displayId=''}=mapping[id]||{};
-
-  if(st.view==='years'){
-    _renderYears(id, cal, hiddenId, displayId); return;
-  }
-  if(st.view==='months'){
-    _renderMonths(id, cal, hiddenId, displayId); return;
-  }
-  _renderDays(id, cal, hiddenId, displayId);
-}
-
-function _renderYears(id, cal, hiddenId, displayId){
-  const st=calStates[id];
-  const base=Math.floor(st.y/16)*16;  // show 16 years
-  const selVal=hiddenId?document.getElementById(hiddenId).value:'';
-  let selY=selVal?parseInt(selVal.split('-')[0]):null;
-  const curY=new Date().getFullYear();
-
-  let html=`<div class="cal-nav">
-    <button class="cal-nav-btn" onclick="_yearPage('${id}',-16)">‹‹</button>
-    <div class="cal-header-pill"><span class="cal-header-part" style="cursor:default">${base} – ${base+15}</span></div>
-    <button class="cal-nav-btn" onclick="_yearPage('${id}',16)">››</button>
-  </div><div class="cal-year-grid">`;
-  for(let y=base;y<base+16;y++){
-    const cls=['cal-year-item', y===selY?'selected':'', y===curY&&y!==selY?'current':''].filter(Boolean).join(' ');
-    html+=`<div class="${cls}" onclick="_pickYear('${id}',${y})">${y}</div>`;
-  }
-  cal.innerHTML=html+'</div>';
-}
-
-function _renderMonths(id, cal, hiddenId, displayId){
-  const st=calStates[id];
-  const selVal=hiddenId?document.getElementById(hiddenId).value:'';
-  let selM=null,selY=null;
-  if(selVal){const p=selVal.split('-');selY=+p[0];selM=+p[1];}
-  const curY=new Date().getFullYear(), curM=new Date().getMonth()+1;
-
-  let html=`<div class="cal-nav">
-    <button class="cal-nav-btn" onclick="_yearPage('${id}',-1)">‹</button>
-    <div class="cal-header-pill">
-      <span class="cal-header-part" onclick="_setView('${id}','years')">${st.y}</span>
-    </div>
-    <button class="cal-nav-btn" onclick="_yearPage('${id}',1)">›</button>
-  </div><div class="cal-month-grid">`;
-  MONTH_SHORT.forEach((n,i)=>{
-    const mn=i+1;
-    const isSel=selY===st.y&&selM===mn;
-    const isCur=curY===st.y&&curM===mn&&!isSel;
-    const cls=['cal-month-item',isSel?'selected':'',isCur?'current':''].filter(Boolean).join(' ');
-    html+=`<div class="${cls}" onclick="_pickMonth('${id}',${mn})">${n}</div>`;
-  });
-  cal.innerHTML=html+'</div>';
-}
-
-function _renderDays(id, cal, hiddenId, displayId){
-  const st=calStates[id];
-  const totalDays=dIM(st.y,st.m), startDow=mStart(st.y,st.m);
-  const selVal=hiddenId?document.getElementById(hiddenId).value:'';
-  let selY=null,selM=null,selD=null;
-  if(selVal){const p=selVal.split('-');selY=+p[0];selM=+p[1];selD=+p[2];}
-  const tn=new Date();
-
-  let html=`<div class="cal-nav">
-    <button class="cal-nav-btn" onclick="_navMonth('${id}',-1)">‹</button>
-    <div class="cal-header-pill">
-      <span class="cal-header-part" onclick="_setView('${id}','months')">${MONTH_NAMES[st.m-1]}</span>
-      <div class="cal-header-divider"></div>
-      <span class="cal-header-part" onclick="_setView('${id}','years')">${st.y}</span>
-    </div>
-    <button class="cal-nav-btn" onclick="_navMonth('${id}',1)">›</button>
-  </div>
-  <div class="cal-grid">`;
-
-  DAYS_NAMES.forEach(d=>html+=`<div class="cal-dow">${d}</div>`);
-
-  // leading blanks from previous month
-  const prevDays=dIM(st.y,st.m-1||12);
-  for(let i=0;i<startDow;i++) html+=`<div class="cal-day other-month">${prevDays-startDow+i+1}</div>`;
-
-  for(let d=1;d<=totalDays;d++){
-    const dow=(startDow+d-1)%7, isSun=dow===0;
-    const isToday=d===tn.getDate()&&st.m===tn.getMonth()+1&&st.y===tn.getFullYear();
-    const isSel=selY===st.y&&selM===st.m&&selD===d;
-    const cls=['cal-day',isSun?'sunday':'',isToday?'today':'',isSel?'selected':''].filter(Boolean).join(' ');
-    html+=`<div class="${cls}" onclick="_pickDay('${id}','${hiddenId}','${displayId}',${d})">${d}</div>`;
-  }
-
-  // trailing blanks
-  const rem=(startDow+totalDays)%7;
-  if(rem>0) for(let d=1;d<=7-rem;d++) html+=`<div class="cal-day other-month">${d}</div>`;
-
-  cal.innerHTML=html+'</div>';
-}
-
-// Navigation helpers
-function _navMonth(id,dir){const s=calStates[id];s.m+=dir;if(s.m>12){s.m=1;s.y++;}else if(s.m<1){s.m=12;s.y--;}_renderCal(id)}
-function _yearPage(id,dir){calStates[id].y+=dir;_renderCal(id)}
-function _setView(id,v){calStates[id].view=v;_renderCal(id)}
-function _pickYear(id,y){calStates[id].y=y;calStates[id].view='months';_renderCal(id)}
-function _pickMonth(id,m){calStates[id].m=m;calStates[id].view='days';_renderCal(id)}
-function _pickDay(id,hid,did,d){
-  const st=calStates[id];
-  const v=`${st.y}-${String(st.m).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-  if(hid)document.getElementById(hid).value=v;
-  if(did)document.getElementById(did).value=`${String(d).padStart(2,'0')} ${MONTH_NAMES[st.m-1]} ${st.y}`;
-  document.getElementById(id).classList.add('hidden');
-}
-
-// Close calendar on outside click
-document.addEventListener('click',function(e){
-  document.querySelectorAll('.calendar').forEach(cal=>{
-    if(!cal.classList.contains('hidden')&&!cal.contains(e.target)){
-      const inp=document.getElementById(cal.id.replace('Cal','').replace(/([A-Z])/,'')+'Display');
-      if(inp&&inp.contains(e.target))return;
-      cal.classList.add('hidden');
-    }
-  });
-});
-
-// ============================================================
-//  MONTH/YEAR SELECTS (toolbar)
-// ============================================================
-function buildMY(mId,yId,dm,dy,cb){
-  const ms=document.getElementById(mId),ys=document.getElementById(yId);
-  if(!ms||!ys)return;
-  ms.innerHTML=MONTH_NAMES.map((n,i)=>`<option value="${i+1}"${i+1==dm?' selected':''}>${n}</option>`).join('');
-  const cy=new Date().getFullYear();ys.innerHTML='';
-  for(let y=cy-3;y<=cy+2;y++)ys.innerHTML+=`<option value="${y}"${y==dy?' selected':''}>${y}</option>`;
-  if(cb){ms.onchange=cb;ys.onchange=cb;}
-}
+function getEobi(emp){const en=document.getElementById('eobiEnabled')?.checked??true;const pn=document.getElementById('pessiEnabled')?.checked??true;const ep=parseFloat(document.getElementById('eobiEmpPct')?.value||5)/100;const pp=parseFloat(document.getElementById('pessiEmpPct')?.value||1)/100;const eobiEmp=en&&emp.eobi?Math.round(EOBI_MIN_WAGE*ep):0;const eobiEr=en&&emp.eobi?Math.round(EOBI_MIN_WAGE*0.05):0;const pessiEmp=pn&&emp.pessi?Math.round(emp.salary*pp):0;const pessiEr=pn&&emp.pessi?Math.round(emp.salary*0.06):0;return{eobiEmp,eobiEr,pessiEmp,pessiEr,totalEmpDed:eobiEmp+pessiEmp};}
+function getPayData(empId,y,m){const emp=employees.find(e=>e.id==empId);if(!emp)return null;const days=dIM(y,m),sd=mStart(y,m);let present=0,sundays=0,leaves=0,absents=0,otHrs=0;for(let d=1;d<=days;d++){const dow=(sd+d-1)%7,isSun=dow===0;const rec=attendance[attKey(empId,y,m,d)]||{};if(isSun){sundays++;continue;}const st=rec.status||(rec.inTime?'P':'');if(st==='P'||(rec.inTime&&!st))present++;else if(st==='A')absents++;else if(st==='L')leaves++;if((rec.ot||0)>0)otHrs+=rec.ot;}const workDays=days-sundays,payDays=workDays-absents;const dailyRate=emp.salary/workDays;const salAmt=dailyRate*payDays;const hrRate=emp.salary/(workDays*emp.dutyHrs);const otAmt=otHrs*hrRate*1.5;const{eobiEmp,eobiEr,pessiEmp,pessiEr,totalEmpDed}=getEobi(emp);const net=salAmt+otAmt+(emp.allowance||0)-(emp.deduction||0)-(emp.otherDed||0)-totalEmpDed;return{present,sundays,leaves,absents,otHrs:Math.round(otHrs*10)/10,payDays,salAmt:Math.round(salAmt),otAmt:Math.round(otAmt),net:Math.round(net),workDays,totalDays:days,dailyRate:Math.round(dailyRate),eobiEmp,eobiEr,pessiEmp,pessiEr,totalEmpDed};}
+// CALENDAR
+let calStates={};
+function openCal(calId,evt){evt&&evt.stopPropagation();document.querySelectorAll('.calendar').forEach(c=>{if(c.id!==calId)c.classList.add('hidden');});const cal=document.getElementById(calId);if(!calStates[calId]){const now=new Date();calStates[calId]={view:'days',y:now.getFullYear(),m:now.getMonth()+1};}cal.classList.toggle('hidden');if(!cal.classList.contains('hidden'))_renderCal(calId);}
+function _renderCal(id){const st=calStates[id];if(!st)return;const cal=document.getElementById(id);const mapping={joinCal:{h:'fJoin',d:'fJoinDisplay'}};const{h:hiddenId='',d:displayId=''}=mapping[id]||{};if(st.view==='years'){_renderYears(id,cal,hiddenId,displayId);return;}if(st.view==='months'){_renderMonths(id,cal,hiddenId,displayId);return;}_renderDays(id,cal,hiddenId,displayId);}
+function _renderYears(id,cal,hiddenId,displayId){const st=calStates[id];const base=Math.floor(st.y/16)*16;const selVal=hiddenId?document.getElementById(hiddenId).value:'';let selY=selVal?parseInt(selVal.split('-')[0]):null;const curY=new Date().getFullYear();let html=`<div class="cal-nav"><button class="cal-nav-btn" onclick="_yearPage('${id}',-16)">&#8249;&#8249;</button><div class="cal-header-pill"><span class="cal-header-part" style="cursor:default">${base} – ${base+15}</span></div><button class="cal-nav-btn" onclick="_yearPage('${id}',16)">&#8250;&#8250;</button></div><div class="cal-year-grid">`;for(let y=base;y<base+16;y++){const cls=['cal-year-item',y===selY?'selected':'',y===curY&&y!==selY?'current':''].filter(Boolean).join(' ');html+=`<div class="${cls}" onclick="_pickYear('${id}',${y})">${y}</div>`;}cal.innerHTML=html+'</div>';}
+function _renderMonths(id,cal,hiddenId,displayId){const st=calStates[id];const selVal=hiddenId?document.getElementById(hiddenId).value:'';let selM=null,selY=null;if(selVal){const p=selVal.split('-');selY=+p[0];selM=+p[1];}const curY=new Date().getFullYear(),curM=new Date().getMonth()+1;let html=`<div class="cal-nav"><button class="cal-nav-btn" onclick="_yearPage('${id}',-1)">&#8249;</button><div class="cal-header-pill"><span class="cal-header-part" onclick="_setView('${id}','years')">${st.y}</span></div><button class="cal-nav-btn" onclick="_yearPage('${id}',1)">&#8250;</button></div><div class="cal-month-grid">`;MONTH_SHORT.forEach((n,i)=>{const mn=i+1;const isSel=selY===st.y&&selM===mn;const isCur=curY===st.y&&curM===mn&&!isSel;const cls=['cal-month-item',isSel?'selected':'',isCur?'current':''].filter(Boolean).join(' ');html+=`<div class="${cls}" onclick="_pickMonth('${id}',${mn})">${n}</div>`;});cal.innerHTML=html+'</div>';}
+function _renderDays(id,cal,hiddenId,displayId){const st=calStates[id];const totalDays=dIM(st.y,st.m),startDow=mStart(st.y,st.m);const selVal=hiddenId?document.getElementById(hiddenId).value:'';let selY=null,selM=null,selD=null;if(selVal){const p=selVal.split('-');selY=+p[0];selM=+p[1];selD=+p[2];}const tn=new Date();let html=`<div class="cal-nav"><button class="cal-nav-btn" onclick="_navMonth('${id}',-1)">&#8249;</button><div class="cal-header-pill"><span class="cal-header-part" onclick="_setView('${id}','months')">${MONTH_NAMES[st.m-1]}</span><div class="cal-header-divider"></div><span class="cal-header-part" onclick="_setView('${id}','years')">${st.y}</span></div><button class="cal-nav-btn" onclick="_navMonth('${id}',1)">&#8250;</button></div><div class="cal-grid">`;DAYS_NAMES.forEach(d=>html+=`<div class="cal-dow">${d}</div>`);const prevDays=dIM(st.y,st.m-1||12);for(let i=0;i<startDow;i++)html+=`<div class="cal-day other-month">${prevDays-startDow+i+1}</div>`;for(let d=1;d<=totalDays;d++){const dow=(startDow+d-1)%7,isSun=dow===0;const isToday=d===tn.getDate()&&st.m===tn.getMonth()+1&&st.y===tn.getFullYear();const isSel=selY===st.y&&selM===st.m&&selD===d;const cls=['cal-day',isSun?'sunday':'',isToday?'today':'',isSel?'selected':''].filter(Boolean).join(' ');html+=`<div class="${cls}" onclick="_pickDay('${id}','${hiddenId}','${displayId}',${d})">${d}</div>`;}const rem=(startDow+totalDays)%7;if(rem>0)for(let d=1;d<=7-rem;d++)html+=`<div class="cal-day other-month">${d}</div>`;cal.innerHTML=html+'</div>';}
+function _navMonth(id,dir){const s=calStates[id];s.m+=dir;if(s.m>12){s.m=1;s.y++;}else if(s.m<1){s.m=12;s.y--;}_renderCal(id);}
+function _yearPage(id,dir){calStates[id].y+=dir;_renderCal(id);}
+function _setView(id,v){calStates[id].view=v;_renderCal(id);}
+function _pickYear(id,y){calStates[id].y=y;calStates[id].view='months';_renderCal(id);}
+function _pickMonth(id,m){calStates[id].m=m;calStates[id].view='days';_renderCal(id);}
+function _pickDay(id,hid,did,d){const st=calStates[id];const v=`${st.y}-${String(st.m).padStart(2,'0')}-${String(d).padStart(2,'0')}`;if(hid)document.getElementById(hid).value=v;if(did)document.getElementById(did).value=`${String(d).padStart(2,'0')} ${MONTH_NAMES[st.m-1]} ${st.y}`;document.getElementById(id).classList.add('hidden');}
+document.addEventListener('click',function(e){document.querySelectorAll('.calendar').forEach(cal=>{if(!cal.classList.contains('hidden')&&!cal.contains(e.target)){cal.classList.add('hidden');}});});
+// MONTH/YEAR SELECTS
+function buildMY(mId,yId,dm,dy,cb){const ms=document.getElementById(mId),ys=document.getElementById(yId);if(!ms||!ys)return;ms.innerHTML=MONTH_NAMES.map((n,i)=>`<option value="${i+1}"${i+1==dm?' selected':''}>${n}</option>`).join('');const cy=new Date().getFullYear();ys.innerHTML='';for(let y=cy-3;y<=cy+2;y++)ys.innerHTML+=`<option value="${y}"${y==dy?' selected':''}>${y}</option>`;if(cb){ms.onchange=cb;ys.onchange=cb;}}
 function getMY(mId,yId){return{y:parseInt(document.getElementById(yId).value),m:parseInt(document.getElementById(mId).value)};}
-
-// ============================================================
-//  DASHBOARD
-// ============================================================
-function refreshDashboard(){
-  const{y,m}=getMY('attMonthSel','attYearSel');
-  document.getElementById('topbarMonth').textContent=`${MONTH_NAMES[m-1]} ${y}`;
-  let tN=0,tOT=0,tSal=0,tAbs=0,tEobi=0;
-  employees.forEach(emp=>{const pd=getPayData(emp.id,y,m);if(!pd)return;tN+=pd.net;tOT+=pd.otAmt;tSal+=pd.salAmt;tAbs+=pd.absents;tEobi+=pd.eobiEmp+pd.pessiEmp;});
-  document.getElementById('kpiRow').innerHTML=`
-    <div class="kpi gold"><div class="kpi-label">Net Payroll</div><div class="kpi-val">PKR ${tN.toLocaleString()}</div><div class="kpi-sub">${MONTH_NAMES[m-1]} ${y}</div></div>
-    <div class="kpi blue"><div class="kpi-label">Total Employees</div><div class="kpi-val">${employees.length}</div><div class="kpi-sub">Active staff</div></div>
-    <div class="kpi teal"><div class="kpi-label">Base Salary</div><div class="kpi-val">PKR ${tSal.toLocaleString()}</div><div class="kpi-sub">Payable days</div></div>
-    <div class="kpi purple"><div class="kpi-label">EOBI+PESSI</div><div class="kpi-val">PKR ${tEobi.toLocaleString()}</div><div class="kpi-sub">Employee portion</div></div>
-    <div class="kpi red"><div class="kpi-label">Total Absents</div><div class="kpi-val">${tAbs}</div><div class="kpi-sub">All departments</div></div>`;
-  const depts={};
-  employees.forEach(emp=>{
-    if(!depts[emp.dept])depts[emp.dept]={count:0,otHrs:0,net:0,eobi:0};
-    const pd=getPayData(emp.id,y,m);
-    if(pd){depts[emp.dept].count++;depts[emp.dept].otHrs+=pd.otHrs;depts[emp.dept].net+=pd.net;depts[emp.dept].eobi+=pd.eobiEmp+pd.pessiEmp;}
-  });
-  document.getElementById('deptTable').innerHTML=Object.entries(depts).map(([d,v])=>
-    `<tr><td><span class="badge badge-dept">${d}</span></td><td class="mono">${v.count}</td><td class="mono">${(v.otHrs/v.count).toFixed(1)}</td><td class="mono" style="color:var(--purple)">PKR ${v.eobi.toLocaleString()}</td><td class="mono" style="color:var(--gold)">PKR ${v.net.toLocaleString()}</td></tr>`).join('');
-  let tP=0,tA=0,tL=0,tS=0,tOTh=0;
-  employees.forEach(emp=>{const pd=getPayData(emp.id,y,m);if(!pd)return;tP+=pd.present;tA+=pd.absents;tL+=pd.leaves;tS+=pd.sundays;tOTh+=pd.otHrs;});
-  document.getElementById('attOverview').innerHTML=`
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-      <div class="att-sum-box"><div class="att-sum-val" style="color:var(--green)">${tP}</div><div class="att-sum-lbl">Present</div></div>
-      <div class="att-sum-box"><div class="att-sum-val" style="color:var(--red)">${tA}</div><div class="att-sum-lbl">Absent</div></div>
-      <div class="att-sum-box"><div class="att-sum-val" style="color:var(--gold2)">${tL}</div><div class="att-sum-lbl">Leaves</div></div>
-      <div class="att-sum-box"><div class="att-sum-val" style="color:var(--text2)">${tS}</div><div class="att-sum-lbl">Sundays</div></div>
-    </div>
-    <div style="margin-top:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px;display:flex;justify-content:space-between;align-items:center">
-      <span style="font-size:12px;color:var(--text2)">Total Overtime Hours</span>
-      <span style="font-size:19px;font-weight:700;font-family:var(--mono);color:var(--teal)">${tOTh.toFixed(1)} hrs</span>
-    </div>`;
-}
-
-// ============================================================
-//  ATTENDANCE
-// ============================================================
-function loadAttendance(){
-  const empId=parseInt(document.getElementById('attEmpSelect').value);
-  const{y,m}=getMY('attMonthSel','attYearSel');
-  const dh=parseFloat(document.getElementById('dutyHrs').value)||8;
-  const container=document.getElementById('attendanceGrid');
-  if(!empId){container.innerHTML='<div class="empty-state">Select an employee to view attendance</div>';return;}
-  const emp=employees.find(e=>e.id==empId);
-  const days=dIM(y,m),sdw=mStart(y,m),pd=getPayData(empId,y,m);
-  let html=`<div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap">
-    <div><div style="font-size:17px;font-weight:600">${emp.name}</div><div style="font-size:11px;color:var(--text2)">${emp.code} · ${emp.dept} · ${emp.desig}</div></div>
-    <div style="flex:1"></div>
-    <div class="att-sum-box" style="min-width:70px"><div class="att-sum-val" style="color:var(--green)">${pd.present}</div><div class="att-sum-lbl">Present</div></div>
-    <div class="att-sum-box" style="min-width:70px"><div class="att-sum-val" style="color:var(--red)">${pd.absents}</div><div class="att-sum-lbl">Absent</div></div>
-    <div class="att-sum-box" style="min-width:70px"><div class="att-sum-val" style="color:var(--teal)">${pd.otHrs}</div><div class="att-sum-lbl">OT Hrs</div></div>
-    <div class="att-sum-box" style="min-width:70px"><div class="att-sum-val" style="color:var(--gold)">${pd.payDays}</div><div class="att-sum-lbl">Pay Days</div></div>
-  </div><div class="days-grid">`;
-  for(let d=1;d<=days;d++){
-    const dow=(sdw+d-1)%7,isSun=dow===0;
-    const k=attKey(empId,y,m,d);
-    if(!attendance[k])attendance[k]={inTime:'',outTime:'',status:isSun?'S':'',ot:0};
-    const rec=attendance[k],ot=rec.ot||0;
-    const otC=ot>0?'positive':ot<0?'negative':'zero';
-    const curSt=rec.status||(isSun?'S':'P');
-    html+=`<div class="day-card${isSun?' sunday':''}">
-      <div style="display:flex;justify-content:space-between"><span class="day-num">${String(d).padStart(2,'0')}</span><span class="day-name">${DAYS_NAMES[dow]}</span></div>
-      <input type="time" class="time-input" id="in-${d}" value="${rec.inTime||''}" onchange="updAtt(${empId},${y},${m},${d},'in',this.value,${dh})" ${isSun?'disabled':''}>
-      <input type="time" class="time-input" id="out-${d}" value="${rec.outTime||''}" onchange="updAtt(${empId},${y},${m},${d},'out',this.value,${dh})" ${isSun?'disabled':''}>
-      <div class="day-ot ${otC}" id="ot-${d}">${ot!==0?(ot>0?`+${ot}h`:`${ot}h`):'–'}</div>
-      <select class="status-sel" id="st-${d}" onchange="updAtt(${empId},${y},${m},${d},'status',this.value,${dh})" ${isSun?'disabled':''}>
-        ${['P','A','S','L','R'].map(s=>`<option value="${s}"${s===curSt?' selected':''}>${s}</option>`).join('')}
-      </select>
-    </div>`;
-  }
-  container.innerHTML=html+'</div>';
-}
-function updAtt(empId,y,m,d,field,val,dh){
-  const k=attKey(empId,y,m,d);if(!attendance[k])attendance[k]={};
-  if(field==='in')attendance[k].inTime=val;
-  else if(field==='out')attendance[k].outTime=val;
-  else if(field==='status'){attendance[k].status=val;if(['A','S','L','R'].includes(val)){attendance[k].inTime='';attendance[k].outTime='';attendance[k].ot=0;document.getElementById(`in-${d}`).value='';document.getElementById(`out-${d}`).value='';}}
-  if(field!=='status'){const r=attendance[k];r.ot=calcOT(r.inTime,r.outTime,dh);if(r.inTime&&r.outTime){r.status='P';const s=document.getElementById(`st-${d}`);if(s)s.value='P';}}
-  const ot=attendance[k].ot||0;
-  const el=document.getElementById(`ot-${d}`);
-  if(el){el.className=`day-ot ${ot>0?'positive':ot<0?'negative':'zero'}`;el.textContent=ot!==0?(ot>0?`+${ot}h`:`${ot}h`):'–';}
-}
-function autoFillAttendance(){
-  const empId=parseInt(document.getElementById('attEmpSelect').value);
-  const{y,m}=getMY('attMonthSel','attYearSel');
-  const dh=parseFloat(document.getElementById('dutyHrs').value)||8;
-  if(!empId)return;
-  const emp=employees.find(e=>e.id==empId);
-  const shifts={Boiler:['04:30','12:30'],Plant:['06:00','14:00'],Lifter:['06:00','14:00'],Printing:['06:00','14:00'],Folding:['06:00','14:00'],Manual:['08:00','16:00'],Dispatch:['08:00','16:00'],Mechanical:['08:00','16:00'],Electrical:['08:00','16:00'],Quality:['08:00','16:00'],Store:['08:00','16:00'],Administration:['09:00','17:00'],HR:['09:00','17:00'],Canteen:['07:00','15:00']};
-  const[dI,dO]=shifts[emp.dept]||['08:00','16:00'];
-  const days=dIM(y,m),sdw=mStart(y,m);
-  for(let d=1;d<=days;d++){
-    const dow=(sdw+d-1)%7,isSun=dow===0,k=attKey(empId,y,m,d);
-    if(isSun){attendance[k]={inTime:'',outTime:'',status:'S',ot:0};continue;}
-    if(!attendance[k])attendance[k]={};
-    if(!attendance[k].inTime)attendance[k]={inTime:dI,outTime:dO,status:'P',ot:calcOT(dI,dO,dh)};
-  }
-  loadAttendance();showToast('Weekday attendance auto-filled!');
-}
+// DASHBOARD
+function refreshDashboard(){const{y,m}=getMY('attMonthSel','attYearSel');document.getElementById('topbarMonth').textContent=`${MONTH_NAMES[m-1]} ${y}`;let tN=0,tOT=0,tSal=0,tAbs=0,tEobi=0;employees.forEach(emp=>{const pd=getPayData(emp.id,y,m);if(!pd)return;tN+=pd.net;tOT+=pd.otAmt;tSal+=pd.salAmt;tAbs+=pd.absents;tEobi+=pd.eobiEmp+pd.pessiEmp;});document.getElementById('kpiRow').innerHTML=`<div class="kpi gold"><div class="kpi-label">Net Payroll</div><div class="kpi-val">PKR ${tN.toLocaleString()}</div><div class="kpi-sub">${MONTH_NAMES[m-1]} ${y}</div></div><div class="kpi blue"><div class="kpi-label">Total Employees</div><div class="kpi-val">${employees.length}</div><div class="kpi-sub">Active staff</div></div><div class="kpi teal"><div class="kpi-label">Base Salary</div><div class="kpi-val">PKR ${tSal.toLocaleString()}</div><div class="kpi-sub">Payable days</div></div><div class="kpi purple"><div class="kpi-label">EOBI+PESSI</div><div class="kpi-val">PKR ${tEobi.toLocaleString()}</div><div class="kpi-sub">Employee portion</div></div><div class="kpi red"><div class="kpi-label">Total Absents</div><div class="kpi-val">${tAbs}</div><div class="kpi-sub">All departments</div></div>`;const depts={};employees.forEach(emp=>{if(!depts[emp.dept])depts[emp.dept]={count:0,otHrs:0,net:0,eobi:0};const pd=getPayData(emp.id,y,m);if(pd){depts[emp.dept].count++;depts[emp.dept].otHrs+=pd.otHrs;depts[emp.dept].net+=pd.net;depts[emp.dept].eobi+=pd.eobiEmp+pd.pessiEmp;}});document.getElementById('deptTable').innerHTML=Object.entries(depts).map(([d,v])=>`<tr><td><span class="badge badge-dept">${d}</span></td><td class="mono">${v.count}</td><td class="mono">${(v.otHrs/v.count).toFixed(1)}</td><td class="mono" style="color:var(--purple)">PKR ${v.eobi.toLocaleString()}</td><td class="mono" style="color:var(--gold)">PKR ${v.net.toLocaleString()}</td></tr>`).join('');let tP=0,tA=0,tL=0,tS=0,tOTh=0;employees.forEach(emp=>{const pd=getPayData(emp.id,y,m);if(!pd)return;tP+=pd.present;tA+=pd.absents;tL+=pd.leaves;tS+=pd.sundays;tOTh+=pd.otHrs;});document.getElementById('attOverview').innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div class="att-sum-box"><div class="att-sum-val" style="color:var(--green)">${tP}</div><div class="att-sum-lbl">Present</div></div><div class="att-sum-box"><div class="att-sum-val" style="color:var(--red)">${tA}</div><div class="att-sum-lbl">Absent</div></div><div class="att-sum-box"><div class="att-sum-val" style="color:var(--gold2)">${tL}</div><div class="att-sum-lbl">Leaves</div></div><div class="att-sum-box"><div class="att-sum-val" style="color:var(--text2)">${tS}</div><div class="att-sum-lbl">Sundays</div></div></div><div style="margin-top:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;color:var(--text2)">Total Overtime Hours</span><span style="font-size:19px;font-weight:700;font-family:var(--mono);color:var(--teal)">${tOTh.toFixed(1)} hrs</span></div>`;}
+// ATTENDANCE
+function loadAttendance(){const empId=parseInt(document.getElementById('attEmpSelect').value);const{y,m}=getMY('attMonthSel','attYearSel');const dh=parseFloat(document.getElementById('dutyHrs').value)||8;const container=document.getElementById('attendanceGrid');if(!empId){container.innerHTML='<div class="empty-state">Select an employee to view attendance</div>';return;}const emp=employees.find(e=>e.id==empId);const days=dIM(y,m),sdw=mStart(y,m),pd=getPayData(empId,y,m);let html=`<div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap"><div><div style="font-size:17px;font-weight:600">${emp.name}</div><div style="font-size:11px;color:var(--text2)">${emp.code} · ${emp.dept} · ${emp.desig}</div></div><div style="flex:1"></div><div class="att-sum-box" style="min-width:70px"><div class="att-sum-val" style="color:var(--green)">${pd.present}</div><div class="att-sum-lbl">Present</div></div><div class="att-sum-box" style="min-width:70px"><div class="att-sum-val" style="color:var(--red)">${pd.absents}</div><div class="att-sum-lbl">Absent</div></div><div class="att-sum-box" style="min-width:70px"><div class="att-sum-val" style="color:var(--teal)">${pd.otHrs}</div><div class="att-sum-lbl">OT Hrs</div></div><div class="att-sum-box" style="min-width:70px"><div class="att-sum-val" style="color:var(--gold)">${pd.payDays}</div><div class="att-sum-lbl">Pay Days</div></div></div><div class="days-grid">`;for(let d=1;d<=days;d++){const dow=(sdw+d-1)%7,isSun=dow===0;const k=attKey(empId,y,m,d);if(!attendance[k])attendance[k]={inTime:'',outTime:'',status:isSun?'S':'',ot:0};const rec=attendance[k],ot=rec.ot||0;const otC=ot>0?'positive':ot<0?'negative':'zero';const curSt=rec.status||(isSun?'S':'P');html+=`<div class="day-card${isSun?' sunday':''}"><div style="display:flex;justify-content:space-between"><span class="day-num">${String(d).padStart(2,'0')}</span><span class="day-name">${DAYS_NAMES[dow]}</span></div><input type="time" class="time-input" id="in-${d}" value="${rec.inTime||''}" onchange="updAtt(${empId},${y},${m},${d},'in',this.value,${dh})" ${isSun?'disabled':''}><input type="time" class="time-input" id="out-${d}" value="${rec.outTime||''}" onchange="updAtt(${empId},${y},${m},${d},'out',this.value,${dh})" ${isSun?'disabled':''}><div class="day-ot ${otC}" id="ot-${d}">${ot!==0?(ot>0?`+${ot}h`:`${ot}h`):'–'}</div><select class="status-sel" id="st-${d}" onchange="updAtt(${empId},${y},${m},${d},'status',this.value,${dh})" ${isSun?'disabled':''}>${['P','A','S','L','R'].map(s=>`<option value="${s}"${s===curSt?' selected':''}>${s}</option>`).join('')}</select></div>`;}container.innerHTML=html+'</div>';}
+function updAtt(empId,y,m,d,field,val,dh){const k=attKey(empId,y,m,d);if(!attendance[k])attendance[k]={};if(field==='in')attendance[k].inTime=val;else if(field==='out')attendance[k].outTime=val;else if(field==='status'){attendance[k].status=val;if(['A','S','L','R'].includes(val)){attendance[k].inTime='';attendance[k].outTime='';attendance[k].ot=0;document.getElementById(`in-${d}`).value='';document.getElementById(`out-${d}`).value='';}}if(field!=='status'){const r=attendance[k];r.ot=calcOT(r.inTime,r.outTime,dh);if(r.inTime&&r.outTime){r.status='P';const s=document.getElementById(`st-${d}`);if(s)s.value='P';}}const ot=attendance[k].ot||0;const el=document.getElementById(`ot-${d}`);if(el){el.className=`day-ot ${ot>0?'positive':ot<0?'negative':'zero'}`;el.textContent=ot!==0?(ot>0?`+${ot}h`:`${ot}h`):'–';}}
+function autoFillAttendance(){const empId=parseInt(document.getElementById('attEmpSelect').value);const{y,m}=getMY('attMonthSel','attYearSel');const dh=parseFloat(document.getElementById('dutyHrs').value)||8;if(!empId)return;const emp=employees.find(e=>e.id==empId);const shifts={Boiler:['04:30','12:30'],Plant:['06:00','14:00'],Lifter:['06:00','14:00'],Printing:['06:00','14:00'],Folding:['06:00','14:00'],Manual:['08:00','16:00'],Dispatch:['08:00','16:00'],Mechanical:['08:00','16:00'],Electrical:['08:00','16:00'],Quality:['08:00','16:00'],Store:['08:00','16:00'],Administration:['09:00','17:00'],HR:['09:00','17:00'],Canteen:['07:00','15:00']};const[dI,dO]=shifts[emp.dept]||['08:00','16:00'];const days=dIM(y,m),sdw=mStart(y,m);for(let d=1;d<=days;d++){const dow=(sdw+d-1)%7,isSun=dow===0,k=attKey(empId,y,m,d);if(isSun){attendance[k]={inTime:'',outTime:'',status:'S',ot:0};continue;}if(!attendance[k])attendance[k]={};if(!attendance[k].inTime)attendance[k]={inTime:dI,outTime:dO,status:'P',ot:calcOT(dI,dO,dh)};}loadAttendance();showToast('Weekday attendance auto-filled!');}
 function saveAttendance(){showToast('Attendance saved!');refreshDashboard();}
-
-// ============================================================
-//  PAYROLL TABLE
-// ============================================================
-function renderPayrollTable(){
-  const search=document.getElementById('searchEmp').value.toLowerCase();
-  const dept=document.getElementById('filterDept').value;
-  const{y,m}=getMY('payMonthSel','payYearSel');
-  const filtered=employees.filter(e=>(!dept||e.dept===dept)&&(!search||e.name.toLowerCase().includes(search)||e.code.toLowerCase().includes(search)));
-  let tN=0,tOT=0,tSal=0,tEobi=0,tPessi=0;
-  document.getElementById('payrollBody').innerHTML=filtered.map((emp,i)=>{
-    const pd=getPayData(emp.id,y,m);if(!pd)return '';
-    tN+=pd.net;tOT+=pd.otAmt;tSal+=pd.salAmt;tEobi+=pd.eobiEmp;tPessi+=pd.pessiEmp;
-    return `<tr>
-      <td class="mono" style="color:var(--text2)">${i+1}</td>
-      <td><strong style="font-weight:500">${emp.name}</strong><br><span style="font-size:10px;color:var(--text2)">${emp.code}</span></td>
-      <td><span class="badge badge-dept">${emp.dept}</span></td>
-      <td style="font-size:11px;color:var(--text2)">${emp.desig}</td>
-      <td class="mono">PKR ${emp.salary.toLocaleString()}</td>
-      <td class="mono" style="color:var(--green)">${pd.payDays}/${pd.workDays}</td>
-      <td class="mono" style="color:var(--teal)">${pd.otHrs}</td>
-      <td class="mono">PKR ${pd.otAmt.toLocaleString()}</td>
-      <td class="mono" style="color:var(--text2)">PKR ${(emp.allowance||0).toLocaleString()}</td>
-      <td class="mono" style="color:var(--purple)">PKR ${pd.eobiEmp.toLocaleString()}</td>
-      <td class="mono" style="color:var(--purple)">PKR ${pd.pessiEmp.toLocaleString()}</td>
-      <td class="mono" style="color:var(--red)">PKR ${((emp.deduction||0)+(emp.otherDed||0)).toLocaleString()}</td>
-      <td class="mono" style="color:var(--gold);font-weight:600">PKR ${pd.net.toLocaleString()}</td>
-      <td style="display:flex;gap:4px">
-        <button class="btn btn-ghost btn-sm" onclick="editEmp(${emp.id})">Edit</button>
-        <button class="btn btn-ghost btn-sm" style="color:var(--blue2)" onclick="viewSlip(${emp.id})">Slip</button>
-      </td>
-    </tr>`;
-  }).join('')||'<tr><td colspan="14" class="empty-state">No records found</td></tr>';
-  document.getElementById('payrollTotals').innerHTML=`
-    <div><span style="color:var(--text2);font-size:11px">Staff</span><br><strong>${filtered.length}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">Base Salary</span><br><strong style="color:var(--teal);font-family:var(--mono)">PKR ${tSal.toLocaleString()}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">Overtime</span><br><strong style="color:var(--green);font-family:var(--mono)">PKR ${tOT.toLocaleString()}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">EOBI Emp</span><br><strong style="color:var(--purple);font-family:var(--mono)">PKR ${tEobi.toLocaleString()}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">PESSI Emp</span><br><strong style="color:var(--purple);font-family:var(--mono)">PKR ${tPessi.toLocaleString()}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">Net Payable</span><br><strong style="color:var(--gold);font-family:var(--mono);font-size:15px">PKR ${tN.toLocaleString()}</strong></div>`;
-}
-
-// ============================================================
-//  EOBI TABLE
-// ============================================================
-function renderEobiTable(){
-  const eobiOn=document.getElementById('eobiEnabled').checked;
-  const pessiOn=document.getElementById('pessiEnabled').checked;
-  const ep=parseFloat(document.getElementById('eobiEmpPct').value||5);
-  const pp=parseFloat(document.getElementById('pessiEmpPct').value||1);
-  document.getElementById('eobiEmpRateLabel').textContent=ep+'%';
-  document.getElementById('pessiEmpRateLabel').textContent=pp+'%';
-  const{y,m}=getMY('eobiMonthSel','eobiYearSel');
-  let tEmpD=0,tErD=0,tPEmpD=0,tPErD=0;
-  document.getElementById('eobiBody').innerHTML=employees.map((emp,i)=>{
-    const pd=getPayData(emp.id,y,m);if(!pd)return '';
-    tEmpD+=pd.eobiEmp;tErD+=pd.eobiEr;tPEmpD+=pd.pessiEmp;tPErD+=pd.pessiEr;
-    return `<tr>
-      <td class="mono" style="color:var(--text2)">${i+1}</td>
-      <td><strong style="font-weight:500">${emp.name}</strong></td>
-      <td><span class="badge badge-dept">${emp.dept}</span></td>
-      <td class="mono">PKR ${emp.salary.toLocaleString()}</td>
-      <td class="mono" style="color:var(--purple)">${eobiOn&&emp.eobi?`PKR ${pd.eobiEmp.toLocaleString()}`:'<span style="color:var(--text2)">N/A</span>'}</td>
-      <td class="mono" style="color:var(--blue2)">${eobiOn&&emp.eobi?`PKR ${pd.eobiEr.toLocaleString()}`:'<span style="color:var(--text2)">N/A</span>'}</td>
-      <td class="mono" style="color:var(--purple)">${pessiOn&&emp.pessi?`PKR ${pd.pessiEmp.toLocaleString()}`:'<span style="color:var(--text2)">N/A</span>'}</td>
-      <td class="mono" style="color:var(--blue2)">${pessiOn&&emp.pessi?`PKR ${pd.pessiEr.toLocaleString()}`:'<span style="color:var(--text2)">N/A</span>'}</td>
-      <td class="mono" style="color:var(--red)">PKR ${pd.totalEmpDed.toLocaleString()}</td>
-      <td class="mono" style="color:var(--gold);font-weight:600">PKR ${pd.net.toLocaleString()}</td>
-    </tr>`;
-  }).join('');
-  document.getElementById('eobiTotals').innerHTML=`
-    <div><span style="color:var(--text2);font-size:11px">EOBI Employee</span><br><strong style="color:var(--purple);font-family:var(--mono)">PKR ${tEmpD.toLocaleString()}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">EOBI Employer</span><br><strong style="color:var(--blue2);font-family:var(--mono)">PKR ${tErD.toLocaleString()}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">PESSI Employee</span><br><strong style="color:var(--purple);font-family:var(--mono)">PKR ${tPEmpD.toLocaleString()}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">PESSI Employer</span><br><strong style="color:var(--blue2);font-family:var(--mono)">PKR ${tPErD.toLocaleString()}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">Total Employer Liability</span><br><strong style="color:var(--red);font-family:var(--mono);font-size:15px">PKR ${(tErD+tPErD).toLocaleString()}</strong></div>`;
-}
-
-// ============================================================
-//  BANK LIST
-// ============================================================
-function renderBankList(){
-  const dept=document.getElementById('bankFilterDept').value;
-  const{y,m}=getMY('bankMonthSel','bankYearSel');
-  const filtered=employees.filter(e=>!dept||e.dept===dept);
-  let total=0;
-  document.getElementById('bankBody').innerHTML=filtered.map((emp,i)=>{
-    const pd=getPayData(emp.id,y,m);if(!pd)return '';total+=pd.net;
-    return `<tr>
-      <td class="mono" style="color:var(--text2)">${i+1}</td>
-      <td><strong style="font-weight:500">${emp.name}</strong><br><span style="font-size:10px;color:var(--text2)">${emp.code}</span></td>
-      <td><span class="badge badge-dept">${emp.dept}</span></td>
-      <td style="font-size:11px;color:var(--text2)">${emp.desig}</td>
-      <td>${emp.bank||'<span style="color:var(--text2)">–</span>'}</td>
-      <td class="mono">${emp.accNo||'<span style="color:var(--red);font-size:11px">Not set</span>'}</td>
-      <td class="mono" style="font-size:11px">${emp.iban||'<span style="color:var(--text2)">–</span>'}</td>
-      <td class="mono" style="color:var(--gold);font-weight:600">PKR ${pd.net.toLocaleString()}</td>
-      <td><button class="btn btn-ghost btn-sm" onclick="editEmpBank(${emp.id})">Edit Bank</button></td>
-    </tr>`;
-  }).join('')||'<tr><td colspan="9" class="empty-state">No records</td></tr>';
-  document.getElementById('bankTotals').innerHTML=`
-    <div><span style="color:var(--text2);font-size:11px">Employees</span><br><strong>${filtered.length}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">Bank Transfer</span><br><strong style="color:var(--green)">${filtered.filter(e=>e.payMode==='Bank Transfer').length}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">Cash</span><br><strong style="color:var(--gold)">${filtered.filter(e=>e.payMode==='Cash').length}</strong></div>
-    <div><span style="color:var(--text2);font-size:11px">Total Amount</span><br><strong style="color:var(--gold);font-family:var(--mono);font-size:15px">PKR ${total.toLocaleString()}</strong></div>`;
-}
-
-// ============================================================
-//  PAYSLIP
-// ============================================================
-function renderPayslip(){
-  const empId=parseInt(document.getElementById('slipEmpSelect').value);
-  const{y,m}=getMY('slipMonthSel','slipYearSel');
-  if(!empId){document.getElementById('payslipContent').innerHTML='<div class="empty-state">Select an employee to generate pay slip</div>';return;}
-  const emp=employees.find(e=>e.id==empId),pd=getPayData(emp.id,y,m);
-  document.getElementById('payslipContent').innerHTML=`
-    <div class="payslip-card">
-      <div class="payslip-header">
-        <div><div class="payslip-logo">FM Packages Pvt Ltd<span>Payroll Dept · Rawalpindi, Punjab</span></div></div>
-        <div class="payslip-period"><strong>${MONTH_NAMES[m-1]} ${y}</strong>Salary Slip</div>
-      </div>
-      <div class="payslip-employee">
-        <div class="payslip-field"><label>Employee Name</label><p>${emp.name}</p></div>
-        <div class="payslip-field"><label>Employee Code</label><p>${emp.code}</p></div>
-        <div class="payslip-field"><label>CNIC</label><p>${emp.cnic||'–'}</p></div>
-        <div class="payslip-field"><label>Department</label><p>${emp.dept}</p></div>
-        <div class="payslip-field"><label>Designation</label><p>${emp.desig}</p></div>
-        <div class="payslip-field"><label>Joining Date</label><p>${emp.joinDate||'–'}</p></div>
-        <div class="payslip-field"><label>Father's Name</label><p>${emp.father||'–'}</p></div>
-        <div class="payslip-field"><label>Bank</label><p>${emp.bank||'–'}</p></div>
-        <div class="payslip-field"><label>Account No.</label><p>${emp.accNo||'–'}</p></div>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px">
-        <div class="att-sum-box"><div class="att-sum-val" style="color:var(--green)">${pd.present}</div><div class="att-sum-lbl">Present</div></div>
-        <div class="att-sum-box"><div class="att-sum-val" style="color:var(--red)">${pd.absents}</div><div class="att-sum-lbl">Absent</div></div>
-        <div class="att-sum-box"><div class="att-sum-val" style="color:var(--gold2)">${pd.leaves}</div><div class="att-sum-lbl">Leaves</div></div>
-        <div class="att-sum-box"><div class="att-sum-val" style="color:var(--teal)">${pd.otHrs}</div><div class="att-sum-lbl">OT Hrs</div></div>
-        <div class="att-sum-box"><div class="att-sum-val" style="color:var(--gold)">${pd.payDays}</div><div class="att-sum-lbl">Pay Days</div></div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:4px">
-        <div>
-          <div class="pay-section-title">Earnings</div>
-          <div class="pay-row"><span>Basic Salary</span><span class="mono">PKR ${emp.salary.toLocaleString()}</span></div>
-          <div class="pay-row"><span>Earned (${pd.payDays}/${pd.workDays} days)</span><span class="mono">PKR ${pd.salAmt.toLocaleString()}</span></div>
-          <div class="pay-row"><span>Overtime (${pd.otHrs} hrs × 1.5×)</span><span class="mono">PKR ${pd.otAmt.toLocaleString()}</span></div>
-          <div class="pay-row"><span>Allowance</span><span class="mono">PKR ${(emp.allowance||0).toLocaleString()}</span></div>
-          <div class="pay-row" style="font-weight:600"><span>Gross</span><span class="mono" style="color:var(--green)">PKR ${(pd.salAmt+pd.otAmt+(emp.allowance||0)).toLocaleString()}</span></div>
-        </div>
-        <div>
-          <div class="pay-section-title ded">Deductions</div>
-          <div class="pay-row"><span>Absent (${pd.absents}d @ PKR ${pd.dailyRate})</span><span class="mono" style="color:var(--red)">PKR ${(pd.dailyRate*pd.absents).toLocaleString()}</span></div>
-          <div class="pay-row"><span>EOBI Employee</span><span class="mono" style="color:var(--purple)">PKR ${pd.eobiEmp.toLocaleString()}</span></div>
-          <div class="pay-row"><span>PESSI Employee</span><span class="mono" style="color:var(--purple)">PKR ${pd.pessiEmp.toLocaleString()}</span></div>
-          <div class="pay-row"><span>Advance</span><span class="mono" style="color:var(--red)">PKR ${(emp.deduction||0).toLocaleString()}</span></div>
-          <div class="pay-row"><span>Other Deductions</span><span class="mono" style="color:var(--red)">PKR ${(emp.otherDed||0).toLocaleString()}</span></div>
-        </div>
-      </div>
-      <div class="pay-total">
-        <span class="pay-total-label">NET SALARY — ${emp.payMode||'Bank Transfer'}</span>
-        <span class="pay-total-val">PKR ${pd.net.toLocaleString()}</span>
-      </div>
-      <div style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;border-top:1px solid var(--border);padding-top:14px">
-        <div style="text-align:center"><div style="font-size:10px;color:var(--text2);margin-bottom:18px">Prepared By</div><div style="border-top:1px solid var(--border2);padding-top:5px;font-size:10px;color:var(--text2)">HR Department</div></div>
-        <div style="text-align:center"><div style="font-size:10px;color:var(--text2);margin-bottom:18px">Checked By</div><div style="border-top:1px solid var(--border2);padding-top:5px;font-size:10px;color:var(--text2)">Accounts</div></div>
-        <div style="text-align:center"><div style="font-size:10px;color:var(--text2);margin-bottom:18px">Employee Signature</div><div style="border-top:1px solid var(--border2);padding-top:5px;font-size:10px;color:var(--text2)">${emp.name}</div></div>
-      </div>
-    </div>`;
-}
-
-// ============================================================
-//  REPORTS
-// ============================================================
-function renderReports(){
-  const{y,m}=getMY('payMonthSel','payYearSel');
-  let tN=0,tOT=0,top=null,mx=0;const depts={};
-  employees.forEach(emp=>{
-    const pd=getPayData(emp.id,y,m);if(!pd)return;
-    tN+=pd.net;tOT+=pd.otHrs;if(pd.net>mx){mx=pd.net;top=emp.name;}
-    if(!depts[emp.dept])depts[emp.dept]={net:0,count:0};
-    depts[emp.dept].net+=pd.net;depts[emp.dept].count++;
-  });
-  const mx2=Math.max(...Object.values(depts).map(d=>d.net));
-  document.getElementById('reportGrid').innerHTML=`
-    <div class="report-card">
-      <h4>Payroll Summary</h4>
-      <div class="pay-row"><span>Total Staff</span><span class="mono">${employees.length}</span></div>
-      <div class="pay-row"><span>Gross Payroll</span><span class="mono" style="color:var(--gold)">PKR ${tN.toLocaleString()}</span></div>
-      <div class="pay-row"><span>Avg Salary</span><span class="mono">PKR ${Math.round(tN/employees.length).toLocaleString()}</span></div>
-      <div class="pay-row"><span>Total OT Hours</span><span class="mono" style="color:var(--teal)">${tOT.toFixed(1)}</span></div>
-      <div class="pay-row"><span>Highest Earner</span><span style="color:var(--green)">${top||'–'}</span></div>
-    </div>
-    <div class="report-card">
-      <h4>Staff by Department</h4>
-      ${Object.entries(depts).map(([d,v])=>`<div class="dept-row"><span class="dept-name">${d}</span><div class="dept-bar-wrap"><div class="dept-bar" style="width:${Math.round(v.count/employees.length*100)}%"></div></div><span class="dept-val">${v.count} staff</span></div>`).join('')}
-    </div>`;
-  document.getElementById('reportDept').innerHTML=`<div class="report-card"><h4>Salary by Department</h4>${Object.entries(depts).map(([d,v])=>`<div class="dept-row"><span class="dept-name">${d}</span><div class="dept-bar-wrap"><div class="dept-bar" style="width:${Math.round(v.net/mx2*100)}%"></div></div><span class="dept-val">PKR ${v.net.toLocaleString()}</span></div>`).join('')}</div>`;
-}
-
-// ============================================================
-//  EXCEL EXPORT
-// ============================================================
-function exportExcel(){
-  const{y,m}=getMY('payMonthSel','payYearSel');const mn=MONTH_NAMES[m-1];
-  const wb=XLSX.utils.book_new();
-  const hdr=['#','Name','Father','Code','CNIC','Department','Designation','Basic Salary','Pay Days','Working Days','OT Hours','OT Amount','Allowance','EOBI Emp','PESSI Emp','Advance','Other Ded','Net Salary','Bank','Account No','IBAN','Pay Mode'];
-  const rows=employees.map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return null;return[i+1,emp.name,emp.father||'',emp.code,emp.cnic||'',emp.dept,emp.desig,emp.salary,pd.payDays,pd.workDays,pd.otHrs,pd.otAmt,emp.allowance||0,pd.eobiEmp,pd.pessiEmp,emp.deduction||0,emp.otherDed||0,pd.net,emp.bank||'',emp.accNo||'',emp.iban||'',emp.payMode||''];}).filter(Boolean);
-  const tot=['TOTAL','','','','','','','',rows.reduce((s,r)=>s+r[8],0),'',rows.reduce((s,r)=>s+r[10],0),rows.reduce((s,r)=>s+r[11],0),rows.reduce((s,r)=>s+r[12],0),rows.reduce((s,r)=>s+r[13],0),rows.reduce((s,r)=>s+r[14],0),rows.reduce((s,r)=>s+r[15],0),rows.reduce((s,r)=>s+r[16],0),rows.reduce((s,r)=>s+r[17],0),'','','',''];
-  const ws=XLSX.utils.aoa_to_sheet([[`FM Packages Pvt Ltd — Salary Sheet ${mn} ${y}`],[],hdr,...rows,tot]);
-  ws['!cols']=hdr.map((_,i)=>({wch:i===1||i===2?22:i===5||i===6?16:14}));
-  XLSX.utils.book_append_sheet(wb,ws,`Salary ${mn} ${y}`);
-  const eHdr=['#','Name','Department','Basic Salary','EOBI Employee','EOBI Employer','PESSI Employee','PESSI Employer','Total Emp Ded','Net Salary'];
-  const eRows=employees.map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return null;return[i+1,emp.name,emp.dept,emp.salary,pd.eobiEmp,pd.eobiEr,pd.pessiEmp,pd.pessiEr,pd.totalEmpDed,pd.net];}).filter(Boolean);
-  const ws2=XLSX.utils.aoa_to_sheet([[`EOBI/PESSI Report — ${mn} ${y}`],[],eHdr,...eRows]);
-  XLSX.utils.book_append_sheet(wb,ws2,`EOBI ${mn} ${y}`);
-  const bHdr=['#','Name','Department','Designation','Bank','Account No','IBAN','Account Title','Branch','Pay Mode','Net Salary'];
-  const bRows=employees.filter(e=>e.payMode==='Bank Transfer').map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return null;return[i+1,emp.name,emp.dept,emp.desig,emp.bank||'',emp.accNo||'',emp.iban||'',emp.accTitle||'',emp.branch||'',emp.payMode||'',pd.net];}).filter(Boolean);
-  const ws3=XLSX.utils.aoa_to_sheet([[`Bank Transfer List — ${mn} ${y}`],[],bHdr,...bRows]);
-  XLSX.utils.book_append_sheet(wb,ws3,`Bank List ${mn} ${y}`);
-  XLSX.writeFile(wb,`FM_Packages_Payroll_${mn}_${y}.xlsx`);
-  showToast('Excel exported: 3 sheets — Salary, EOBI, Bank!');
-}
-function exportBankExcel(){
-  const{y,m}=getMY('bankMonthSel','bankYearSel');const mn=MONTH_NAMES[m-1];
-  const wb=XLSX.utils.book_new();
-  const hdr=['#','Name','Department','Designation','Bank','Account No','IBAN','Account Title','Branch','Pay Mode','Net Salary'];
-  const rows=employees.filter(e=>e.payMode==='Bank Transfer').map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return null;return[i+1,emp.name,emp.dept,emp.desig,emp.bank||'',emp.accNo||'',emp.iban||'',emp.accTitle||'',emp.branch||'',emp.payMode||'',pd.net];}).filter(Boolean);
-  const ws=XLSX.utils.aoa_to_sheet([[`FM Packages Bank Transfer List — ${mn} ${y}`],[],hdr,...rows]);
-  XLSX.utils.book_append_sheet(wb,ws,`Bank ${mn}`);
-  XLSX.writeFile(wb,`FM_Bank_List_${mn}_${y}.xlsx`);
-  showToast('Bank list exported!');
-}
-
-// ============================================================
-//  EMPLOYEE MODAL
-// ============================================================
-function switchModalTab(t,el){
-  document.querySelectorAll('.modal-tab').forEach(x=>x.classList.remove('active'));el.classList.add('active');
-  ['basic','financial','bankd'].forEach(id=>document.getElementById(`mt-${id}`).classList.toggle('hidden',id!==t));
-}
-function openAddEmp(){
-  document.getElementById('modalTitle').textContent='Add New Employee';
-  document.getElementById('editEmpId').value='';
-  ['fName','fFather','fCode','fCnic','fAllow','fDeduct','fOtherDed','fAccNo','fIban','fAccTitle','fBranch'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('fSalary').value=36000;document.getElementById('fDuty').value=8;
-  document.getElementById('fEobi').value=1;document.getElementById('fPessi').value=1;
-  document.getElementById('fJoin').value='';document.getElementById('fJoinDisplay').value='';
-  document.getElementById('fPayMode').value='Bank Transfer';
-  calStates['joinCal']={view:'days',y:new Date().getFullYear(),m:new Date().getMonth()+1};
-  switchModalTab('basic',document.querySelector('.modal-tab'));
-  document.getElementById('addEmpModal').classList.remove('hidden');
-}
+// PAYROLL
+function renderPayrollTable(){const search=document.getElementById('searchEmp').value.toLowerCase();const dept=document.getElementById('filterDept').value;const{y,m}=getMY('payMonthSel','payYearSel');const filtered=employees.filter(e=>(!dept||e.dept===dept)&&(!search||e.name.toLowerCase().includes(search)||e.code.toLowerCase().includes(search)));let tN=0,tOT=0,tSal=0,tEobi=0,tPessi=0;document.getElementById('payrollBody').innerHTML=filtered.map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return '';tN+=pd.net;tOT+=pd.otAmt;tSal+=pd.salAmt;tEobi+=pd.eobiEmp;tPessi+=pd.pessiEmp;return `<tr><td class="mono" style="color:var(--text2)">${i+1}</td><td><strong style="font-weight:500">${emp.name}</strong><br><span style="font-size:10px;color:var(--text2)">${emp.code}</span></td><td><span class="badge badge-dept">${emp.dept}</span></td><td style="font-size:11px;color:var(--text2)">${emp.desig}</td><td class="mono">PKR ${emp.salary.toLocaleString()}</td><td class="mono" style="color:var(--green)">${pd.payDays}/${pd.workDays}</td><td class="mono" style="color:var(--teal)">${pd.otHrs}</td><td class="mono">PKR ${pd.otAmt.toLocaleString()}</td><td class="mono" style="color:var(--text2)">PKR ${(emp.allowance||0).toLocaleString()}</td><td class="mono" style="color:var(--purple)">PKR ${pd.eobiEmp.toLocaleString()}</td><td class="mono" style="color:var(--purple)">PKR ${pd.pessiEmp.toLocaleString()}</td><td class="mono" style="color:var(--red)">PKR ${((emp.deduction||0)+(emp.otherDed||0)).toLocaleString()}</td><td class="mono" style="color:var(--gold);font-weight:600">PKR ${pd.net.toLocaleString()}</td><td style="display:flex;gap:4px"><button class="btn btn-ghost btn-sm" onclick="editEmp(${emp.id})">Edit</button><button class="btn btn-ghost btn-sm" style="color:var(--blue2)" onclick="viewSlip(${emp.id})">Slip</button></td></tr>`;}).join('')||'<tr><td colspan="14" class="empty-state">No records found</td></tr>';document.getElementById('payrollTotals').innerHTML=`<div><span style="color:var(--text2);font-size:11px">Staff</span><br><strong>${filtered.length}</strong></div><div><span style="color:var(--text2);font-size:11px">Base Salary</span><br><strong style="color:var(--teal);font-family:var(--mono)">PKR ${tSal.toLocaleString()}</strong></div><div><span style="color:var(--text2);font-size:11px">Overtime</span><br><strong style="color:var(--green);font-family:var(--mono)">PKR ${tOT.toLocaleString()}</strong></div><div><span style="color:var(--text2);font-size:11px">EOBI Emp</span><br><strong style="color:var(--purple);font-family:var(--mono)">PKR ${tEobi.toLocaleString()}</strong></div><div><span style="color:var(--text2);font-size:11px">PESSI Emp</span><br><strong style="color:var(--purple);font-family:var(--mono)">PKR ${tPessi.toLocaleString()}</strong></div><div><span style="color:var(--text2);font-size:11px">Net Payable</span><br><strong style="color:var(--gold);font-family:var(--mono);font-size:15px">PKR ${tN.toLocaleString()}</strong></div>`;}
+// EOBI
+function renderEobiTable(){const eobiOn=document.getElementById('eobiEnabled').checked;const pessiOn=document.getElementById('pessiEnabled').checked;const ep=parseFloat(document.getElementById('eobiEmpPct').value||5);const pp=parseFloat(document.getElementById('pessiEmpPct').value||1);document.getElementById('eobiEmpRateLabel').textContent=ep+'%';document.getElementById('pessiEmpRateLabel').textContent=pp+'%';const{y,m}=getMY('eobiMonthSel','eobiYearSel');let tEmpD=0,tErD=0,tPEmpD=0,tPErD=0;document.getElementById('eobiBody').innerHTML=employees.map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return '';tEmpD+=pd.eobiEmp;tErD+=pd.eobiEr;tPEmpD+=pd.pessiEmp;tPErD+=pd.pessiEr;return `<tr><td class="mono" style="color:var(--text2)">${i+1}</td><td><strong style="font-weight:500">${emp.name}</strong></td><td><span class="badge badge-dept">${emp.dept}</span></td><td class="mono">PKR ${emp.salary.toLocaleString()}</td><td class="mono" style="color:var(--purple)">${eobiOn&&emp.eobi?`PKR ${pd.eobiEmp.toLocaleString()}`:'N/A'}</td><td class="mono" style="color:var(--blue2)">${eobiOn&&emp.eobi?`PKR ${pd.eobiEr.toLocaleString()}`:'N/A'}</td><td class="mono" style="color:var(--purple)">${pessiOn&&emp.pessi?`PKR ${pd.pessiEmp.toLocaleString()}`:'N/A'}</td><td class="mono" style="color:var(--blue2)">${pessiOn&&emp.pessi?`PKR ${pd.pessiEr.toLocaleString()}`:'N/A'}</td><td class="mono" style="color:var(--red)">PKR ${pd.totalEmpDed.toLocaleString()}</td><td class="mono" style="color:var(--gold);font-weight:600">PKR ${pd.net.toLocaleString()}</td></tr>`;}).join('');document.getElementById('eobiTotals').innerHTML=`<div><span style="color:var(--text2);font-size:11px">EOBI Employee</span><br><strong style="color:var(--purple);font-family:var(--mono)">PKR ${tEmpD.toLocaleString()}</strong></div><div><span style="color:var(--text2);font-size:11px">EOBI Employer</span><br><strong style="color:var(--blue2);font-family:var(--mono)">PKR ${tErD.toLocaleString()}</strong></div><div><span style="color:var(--text2);font-size:11px">PESSI Employee</span><br><strong style="color:var(--purple);font-family:var(--mono)">PKR ${tPEmpD.toLocaleString()}</strong></div><div><span style="color:var(--text2);font-size:11px">PESSI Employer</span><br><strong style="color:var(--blue2);font-family:var(--mono)">PKR ${tPErD.toLocaleString()}</strong></div><div><span style="color:var(--text2);font-size:11px">Total Employer Liability</span><br><strong style="color:var(--red);font-family:var(--mono);font-size:15px">PKR ${(tErD+tPErD).toLocaleString()}</strong></div>`;}
+// BANK
+function renderBankList(){const dept=document.getElementById('bankFilterDept').value;const{y,m}=getMY('bankMonthSel','bankYearSel');const filtered=employees.filter(e=>!dept||e.dept===dept);let total=0;document.getElementById('bankBody').innerHTML=filtered.map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return '';total+=pd.net;return `<tr><td class="mono" style="color:var(--text2)">${i+1}</td><td><strong style="font-weight:500">${emp.name}</strong><br><span style="font-size:10px;color:var(--text2)">${emp.code}</span></td><td><span class="badge badge-dept">${emp.dept}</span></td><td style="font-size:11px;color:var(--text2)">${emp.desig}</td><td>${emp.bank||'–'}</td><td class="mono">${emp.accNo||'<span style="color:var(--red);font-size:11px">Not set</span>'}</td><td class="mono" style="font-size:11px">${emp.iban||'–'}</td><td class="mono" style="color:var(--gold);font-weight:600">PKR ${pd.net.toLocaleString()}</td><td><button class="btn btn-ghost btn-sm" onclick="editEmpBank(${emp.id})">Edit</button></td></tr>`;}).join('')||'<tr><td colspan="9" class="empty-state">No records</td></tr>';document.getElementById('bankTotals').innerHTML=`<div><span style="color:var(--text2);font-size:11px">Employees</span><br><strong>${filtered.length}</strong></div><div><span style="color:var(--text2);font-size:11px">Bank Transfer</span><br><strong style="color:var(--green)">${filtered.filter(e=>e.payMode==='Bank Transfer').length}</strong></div><div><span style="color:var(--text2);font-size:11px">Cash</span><br><strong style="color:var(--gold)">${filtered.filter(e=>e.payMode==='Cash').length}</strong></div><div><span style="color:var(--text2);font-size:11px">Total Amount</span><br><strong style="color:var(--gold);font-family:var(--mono);font-size:15px">PKR ${total.toLocaleString()}</strong></div>`;}
+// PAYSLIP
+function renderPayslip(){const empId=parseInt(document.getElementById('slipEmpSelect').value);const{y,m}=getMY('slipMonthSel','slipYearSel');if(!empId){document.getElementById('payslipContent').innerHTML='<div class="empty-state">Select an employee to generate pay slip</div>';return;}const emp=employees.find(e=>e.id==empId),pd=getPayData(emp.id,y,m);document.getElementById('payslipContent').innerHTML=`<div class="payslip-card"><div class="payslip-header"><div><div class="payslip-logo">FM Packages Pvt Ltd<span>Payroll Dept · Rawalpindi, Punjab</span></div></div><div class="payslip-period"><strong>${MONTH_NAMES[m-1]} ${y}</strong>Salary Slip</div></div><div class="payslip-employee"><div class="payslip-field"><label>Employee Name</label><p>${emp.name}</p></div><div class="payslip-field"><label>Employee Code</label><p>${emp.code}</p></div><div class="payslip-field"><label>CNIC</label><p>${emp.cnic||'–'}</p></div><div class="payslip-field"><label>Department</label><p>${emp.dept}</p></div><div class="payslip-field"><label>Designation</label><p>${emp.desig}</p></div><div class="payslip-field"><label>Joining Date</label><p>${emp.joinDate||'–'}</p></div><div class="payslip-field"><label>Father's Name</label><p>${emp.father||'–'}</p></div><div class="payslip-field"><label>Bank</label><p>${emp.bank||'–'}</p></div><div class="payslip-field"><label>Account No.</label><p>${emp.accNo||'–'}</p></div></div><div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:14px"><div class="att-sum-box"><div class="att-sum-val" style="color:var(--green)">${pd.present}</div><div class="att-sum-lbl">Present</div></div><div class="att-sum-box"><div class="att-sum-val" style="color:var(--red)">${pd.absents}</div><div class="att-sum-lbl">Absent</div></div><div class="att-sum-box"><div class="att-sum-val" style="color:var(--gold2)">${pd.leaves}</div><div class="att-sum-lbl">Leaves</div></div><div class="att-sum-box"><div class="att-sum-val" style="color:var(--teal)">${pd.otHrs}</div><div class="att-sum-lbl">OT Hrs</div></div><div class="att-sum-box"><div class="att-sum-val" style="color:var(--gold)">${pd.payDays}</div><div class="att-sum-lbl">Pay Days</div></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:4px"><div><div class="pay-section-title">Earnings</div><div class="pay-row"><span>Basic Salary</span><span class="mono">PKR ${emp.salary.toLocaleString()}</span></div><div class="pay-row"><span>Earned (${pd.payDays}/${pd.workDays} days)</span><span class="mono">PKR ${pd.salAmt.toLocaleString()}</span></div><div class="pay-row"><span>Overtime (${pd.otHrs} hrs × 1.5×)</span><span class="mono">PKR ${pd.otAmt.toLocaleString()}</span></div><div class="pay-row"><span>Allowance</span><span class="mono">PKR ${(emp.allowance||0).toLocaleString()}</span></div><div class="pay-row" style="font-weight:600"><span>Gross</span><span class="mono" style="color:var(--green)">PKR ${(pd.salAmt+pd.otAmt+(emp.allowance||0)).toLocaleString()}</span></div></div><div><div class="pay-section-title ded">Deductions</div><div class="pay-row"><span>Absent (${pd.absents}d @ PKR ${pd.dailyRate})</span><span class="mono" style="color:var(--red)">PKR ${(pd.dailyRate*pd.absents).toLocaleString()}</span></div><div class="pay-row"><span>EOBI Employee</span><span class="mono" style="color:var(--purple)">PKR ${pd.eobiEmp.toLocaleString()}</span></div><div class="pay-row"><span>PESSI Employee</span><span class="mono" style="color:var(--purple)">PKR ${pd.pessiEmp.toLocaleString()}</span></div><div class="pay-row"><span>Advance</span><span class="mono" style="color:var(--red)">PKR ${(emp.deduction||0).toLocaleString()}</span></div><div class="pay-row"><span>Other Deductions</span><span class="mono" style="color:var(--red)">PKR ${(emp.otherDed||0).toLocaleString()}</span></div></div></div><div class="pay-total"><span class="pay-total-label">NET SALARY — ${emp.payMode||'Bank Transfer'}</span><span class="pay-total-val">PKR ${pd.net.toLocaleString()}</span></div><div style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;border-top:1px solid var(--border);padding-top:14px"><div style="text-align:center"><div style="font-size:10px;color:var(--text2);margin-bottom:18px">Prepared By</div><div style="border-top:1px solid var(--border2);padding-top:5px;font-size:10px;color:var(--text2)">HR Department</div></div><div style="text-align:center"><div style="font-size:10px;color:var(--text2);margin-bottom:18px">Checked By</div><div style="border-top:1px solid var(--border2);padding-top:5px;font-size:10px;color:var(--text2)">Accounts</div></div><div style="text-align:center"><div style="font-size:10px;color:var(--text2);margin-bottom:18px">Employee Signature</div><div style="border-top:1px solid var(--border2);padding-top:5px;font-size:10px;color:var(--text2)">${emp.name}</div></div></div></div>`;}
+// REPORTS
+function renderReports(){const{y,m}=getMY('payMonthSel','payYearSel');let tN=0,tOT=0,top=null,mx=0;const depts={};employees.forEach(emp=>{const pd=getPayData(emp.id,y,m);if(!pd)return;tN+=pd.net;tOT+=pd.otHrs;if(pd.net>mx){mx=pd.net;top=emp.name;}if(!depts[emp.dept])depts[emp.dept]={net:0,count:0};depts[emp.dept].net+=pd.net;depts[emp.dept].count++;});const mx2=Math.max(...Object.values(depts).map(d=>d.net));document.getElementById('reportGrid').innerHTML=`<div class="report-card"><h4>Payroll Summary</h4><div class="pay-row"><span>Total Staff</span><span class="mono">${employees.length}</span></div><div class="pay-row"><span>Gross Payroll</span><span class="mono" style="color:var(--gold)">PKR ${tN.toLocaleString()}</span></div><div class="pay-row"><span>Avg Salary</span><span class="mono">PKR ${Math.round(tN/employees.length).toLocaleString()}</span></div><div class="pay-row"><span>Total OT Hours</span><span class="mono" style="color:var(--teal)">${tOT.toFixed(1)}</span></div><div class="pay-row"><span>Highest Earner</span><span style="color:var(--green)">${top||'–'}</span></div></div><div class="report-card"><h4>Staff by Department</h4>${Object.entries(depts).map(([d,v])=>`<div class="dept-row"><span class="dept-name">${d}</span><div class="dept-bar-wrap"><div class="dept-bar" style="width:${Math.round(v.count/employees.length*100)}%"></div></div><span class="dept-val">${v.count} staff</span></div>`).join('')}</div>`;document.getElementById('reportDept').innerHTML=`<div class="report-card"><h4>Salary by Department</h4>${Object.entries(depts).map(([d,v])=>`<div class="dept-row"><span class="dept-name">${d}</span><div class="dept-bar-wrap"><div class="dept-bar" style="width:${Math.round(v.net/mx2*100)}%"></div></div><span class="dept-val">PKR ${v.net.toLocaleString()}</span></div>`).join('')}</div>`;}
+// EXCEL
+function exportExcel(){const{y,m}=getMY('payMonthSel','payYearSel');const mn=MONTH_NAMES[m-1];const wb=XLSX.utils.book_new();const hdr=['#','Name','Father','Code','CNIC','Department','Designation','Basic Salary','Pay Days','Working Days','OT Hours','OT Amount','Allowance','EOBI Emp','PESSI Emp','Advance','Other Ded','Net Salary','Bank','Account No','IBAN','Pay Mode'];const rows=employees.map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return null;return[i+1,emp.name,emp.father||'',emp.code,emp.cnic||'',emp.dept,emp.desig,emp.salary,pd.payDays,pd.workDays,pd.otHrs,pd.otAmt,emp.allowance||0,pd.eobiEmp,pd.pessiEmp,emp.deduction||0,emp.otherDed||0,pd.net,emp.bank||'',emp.accNo||'',emp.iban||'',emp.payMode||''];}).filter(Boolean);const tot=['TOTAL','','','','','','','',rows.reduce((s,r)=>s+r[8],0),'',rows.reduce((s,r)=>s+r[10],0),rows.reduce((s,r)=>s+r[11],0),rows.reduce((s,r)=>s+r[12],0),rows.reduce((s,r)=>s+r[13],0),rows.reduce((s,r)=>s+r[14],0),rows.reduce((s,r)=>s+r[15],0),rows.reduce((s,r)=>s+r[16],0),rows.reduce((s,r)=>s+r[17],0),'','','',''];const ws=XLSX.utils.aoa_to_sheet([[`FM Packages Pvt Ltd — Salary Sheet ${mn} ${y}`],[],hdr,...rows,tot]);XLSX.utils.book_append_sheet(wb,ws,`Salary ${mn} ${y}`);const eHdr=['#','Name','Department','Basic Salary','EOBI Employee','EOBI Employer','PESSI Employee','PESSI Employer','Total Emp Ded','Net Salary'];const eRows=employees.map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return null;return[i+1,emp.name,emp.dept,emp.salary,pd.eobiEmp,pd.eobiEr,pd.pessiEmp,pd.pessiEr,pd.totalEmpDed,pd.net];}).filter(Boolean);const ws2=XLSX.utils.aoa_to_sheet([[`EOBI/PESSI Report — ${mn} ${y}`],[],eHdr,...eRows]);XLSX.utils.book_append_sheet(wb,ws2,`EOBI ${mn} ${y}`);const bHdr=['#','Name','Department','Designation','Bank','Account No','IBAN','Account Title','Branch','Pay Mode','Net Salary'];const bRows=employees.filter(e=>e.payMode==='Bank Transfer').map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return null;return[i+1,emp.name,emp.dept,emp.desig,emp.bank||'',emp.accNo||'',emp.iban||'',emp.accTitle||'',emp.branch||'',emp.payMode||'',pd.net];}).filter(Boolean);const ws3=XLSX.utils.aoa_to_sheet([[`Bank Transfer List — ${mn} ${y}`],[],bHdr,...bRows]);XLSX.utils.book_append_sheet(wb,ws3,`Bank List ${mn} ${y}`);XLSX.writeFile(wb,`FM_Packages_Payroll_${mn}_${y}.xlsx`);showToast('Excel exported: Salary + EOBI + Bank!');}
+function exportBankExcel(){const{y,m}=getMY('bankMonthSel','bankYearSel');const mn=MONTH_NAMES[m-1];const wb=XLSX.utils.book_new();const hdr=['#','Name','Department','Designation','Bank','Account No','IBAN','Account Title','Branch','Pay Mode','Net Salary'];const rows=employees.filter(e=>e.payMode==='Bank Transfer').map((emp,i)=>{const pd=getPayData(emp.id,y,m);if(!pd)return null;return[i+1,emp.name,emp.dept,emp.desig,emp.bank||'',emp.accNo||'',emp.iban||'',emp.accTitle||'',emp.branch||'',emp.payMode||'',pd.net];}).filter(Boolean);const ws=XLSX.utils.aoa_to_sheet([[`FM Packages Bank Transfer List — ${mn} ${y}`],[],hdr,...rows]);XLSX.utils.book_append_sheet(wb,ws,`Bank ${mn}`);XLSX.writeFile(wb,`FM_Bank_List_${mn}_${y}.xlsx`);showToast('Bank list exported!');}
+// MODAL
+function switchModalTab(t,el){document.querySelectorAll('.modal-tab').forEach(x=>x.classList.remove('active'));el.classList.add('active');['basic','financial','bankd'].forEach(id=>document.getElementById(`mt-${id}`).classList.toggle('hidden',id!==t));}
+function openAddEmp(){document.getElementById('modalTitle').textContent='Add New Employee';document.getElementById('editEmpId').value='';['fName','fFather','fCode','fCnic','fAllow','fDeduct','fOtherDed','fAccNo','fIban','fAccTitle','fBranch'].forEach(id=>document.getElementById(id).value='');document.getElementById('fSalary').value=36000;document.getElementById('fDuty').value=8;document.getElementById('fEobi').value=1;document.getElementById('fPessi').value=1;document.getElementById('fJoin').value='';document.getElementById('fJoinDisplay').value='';document.getElementById('fPayMode').value='Bank Transfer';calStates['joinCal']={view:'days',y:new Date().getFullYear(),m:new Date().getMonth()+1};switchModalTab('basic',document.querySelector('.modal-tab'));document.getElementById('addEmpModal').classList.remove('hidden');}
 function editEmpBank(id){editEmp(id);switchModalTab('bankd',document.querySelectorAll('.modal-tab')[2]);}
-function editEmp(id){
-  const emp=employees.find(e=>e.id==id);if(!emp)return;
-  document.getElementById('modalTitle').textContent='Edit Employee';
-  document.getElementById('editEmpId').value=id;
-  document.getElementById('fName').value=emp.name;document.getElementById('fFather').value=emp.father||'';
-  document.getElementById('fCode').value=emp.code;document.getElementById('fCnic').value=emp.cnic||'';
-  document.getElementById('fDept').value=emp.dept;document.getElementById('fDesig').value=emp.desig;
-  document.getElementById('fSalary').value=emp.salary;document.getElementById('fDuty').value=emp.dutyHrs;
-  document.getElementById('fAllow').value=emp.allowance||0;document.getElementById('fDeduct').value=emp.deduction||0;
-  document.getElementById('fOtherDed').value=emp.otherDed||0;
-  document.getElementById('fEobi').value=emp.eobi??1;document.getElementById('fPessi').value=emp.pessi??1;
-  document.getElementById('fBank').value=emp.bank||'';document.getElementById('fAccNo').value=emp.accNo||'';
-  document.getElementById('fIban').value=emp.iban||'';document.getElementById('fAccTitle').value=emp.accTitle||'';
-  document.getElementById('fBranch').value=emp.branch||'';document.getElementById('fPayMode').value=emp.payMode||'Bank Transfer';
-  document.getElementById('fJoin').value=emp.joinDate||'';
-  if(emp.joinDate){const p=emp.joinDate.split('-');document.getElementById('fJoinDisplay').value=`${p[2]} ${MONTH_NAMES[+p[1]-1]} ${p[0]}`;}
-  switchModalTab('basic',document.querySelector('.modal-tab'));
-  document.getElementById('addEmpModal').classList.remove('hidden');
-}
-function saveEmployee(){
-  const id=document.getElementById('editEmpId').value;
-  const emp={name:document.getElementById('fName').value.trim(),father:document.getElementById('fFather').value.trim(),code:document.getElementById('fCode').value.trim(),cnic:document.getElementById('fCnic').value.trim(),dept:document.getElementById('fDept').value,desig:document.getElementById('fDesig').value,salary:parseFloat(document.getElementById('fSalary').value)||36000,dutyHrs:parseFloat(document.getElementById('fDuty').value)||8,allowance:parseFloat(document.getElementById('fAllow').value)||0,deduction:parseFloat(document.getElementById('fDeduct').value)||0,otherDed:parseFloat(document.getElementById('fOtherDed').value)||0,eobi:parseInt(document.getElementById('fEobi').value),pessi:parseInt(document.getElementById('fPessi').value),joinDate:document.getElementById('fJoin').value,bank:document.getElementById('fBank').value,accNo:document.getElementById('fAccNo').value.trim(),iban:document.getElementById('fIban').value.trim(),accTitle:document.getElementById('fAccTitle').value.trim(),branch:document.getElementById('fBranch').value.trim(),payMode:document.getElementById('fPayMode').value};
-  if(!emp.name){showToast('Please enter employee name');return;}
-  if(id){const i=employees.findIndex(e=>e.id==parseInt(id));if(i>-1)employees[i]={...employees[i],...emp};}
-  else employees.push({id:nextId++,...emp});
-  closeModal();populateSelects();refreshDashboard();renderPayrollTable();showToast(id?'Employee updated!':'Employee added!');
-}
+function editEmp(id){const emp=employees.find(e=>e.id==id);if(!emp)return;document.getElementById('modalTitle').textContent='Edit Employee';document.getElementById('editEmpId').value=id;document.getElementById('fName').value=emp.name;document.getElementById('fFather').value=emp.father||'';document.getElementById('fCode').value=emp.code;document.getElementById('fCnic').value=emp.cnic||'';document.getElementById('fDept').value=emp.dept;document.getElementById('fDesig').value=emp.desig;document.getElementById('fSalary').value=emp.salary;document.getElementById('fDuty').value=emp.dutyHrs;document.getElementById('fAllow').value=emp.allowance||0;document.getElementById('fDeduct').value=emp.deduction||0;document.getElementById('fOtherDed').value=emp.otherDed||0;document.getElementById('fEobi').value=emp.eobi??1;document.getElementById('fPessi').value=emp.pessi??1;document.getElementById('fBank').value=emp.bank||'';document.getElementById('fAccNo').value=emp.accNo||'';document.getElementById('fIban').value=emp.iban||'';document.getElementById('fAccTitle').value=emp.accTitle||'';document.getElementById('fBranch').value=emp.branch||'';document.getElementById('fPayMode').value=emp.payMode||'Bank Transfer';document.getElementById('fJoin').value=emp.joinDate||'';if(emp.joinDate){const p=emp.joinDate.split('-');document.getElementById('fJoinDisplay').value=`${p[2]} ${MONTH_NAMES[+p[1]-1]} ${p[0]}`;}switchModalTab('basic',document.querySelector('.modal-tab'));document.getElementById('addEmpModal').classList.remove('hidden');}
+function saveEmployee(){const id=document.getElementById('editEmpId').value;const emp={name:document.getElementById('fName').value.trim(),father:document.getElementById('fFather').value.trim(),code:document.getElementById('fCode').value.trim(),cnic:document.getElementById('fCnic').value.trim(),dept:document.getElementById('fDept').value,desig:document.getElementById('fDesig').value,salary:parseFloat(document.getElementById('fSalary').value)||36000,dutyHrs:parseFloat(document.getElementById('fDuty').value)||8,allowance:parseFloat(document.getElementById('fAllow').value)||0,deduction:parseFloat(document.getElementById('fDeduct').value)||0,otherDed:parseFloat(document.getElementById('fOtherDed').value)||0,eobi:parseInt(document.getElementById('fEobi').value),pessi:parseInt(document.getElementById('fPessi').value),joinDate:document.getElementById('fJoin').value,bank:document.getElementById('fBank').value,accNo:document.getElementById('fAccNo').value.trim(),iban:document.getElementById('fIban').value.trim(),accTitle:document.getElementById('fAccTitle').value.trim(),branch:document.getElementById('fBranch').value.trim(),payMode:document.getElementById('fPayMode').value};if(!emp.name){showToast('Please enter employee name');return;}if(id){const i=employees.findIndex(e=>e.id==parseInt(id));if(i>-1)employees[i]={...employees[i],...emp};}else employees.push({id:nextId++,...emp});closeModal();populateSelects();refreshDashboard();renderPayrollTable();showToast(id?'Employee updated!':'Employee added!');}
 function closeModal(){document.getElementById('addEmpModal').classList.add('hidden');}
 function closeModalOutside(e){if(e.target.classList.contains('modal-overlay'))closeModal();}
 function viewSlip(id){document.getElementById('slipEmpSelect').value=id;switchTab('payslip',document.querySelectorAll('.tab')[5]);renderPayslip();}
-
-// ============================================================
-//  POPULATE & TOAST
-// ============================================================
-function populateSelects(){
-  const opts=employees.map(e=>`<option value="${e.id}">${e.name} (${e.code})</option>`).join('');
-  ['attEmpSelect','slipEmpSelect'].forEach(id=>{document.getElementById(id).innerHTML='<option value="">— Select Employee —</option>'+opts;});
-  const dOpts='<option value="">All Departments</option>'+DEPARTMENTS.map(d=>`<option>${d}</option>`).join('');
-  ['filterDept','bankFilterDept'].forEach(id=>document.getElementById(id).innerHTML=dOpts);
-  document.getElementById('fDept').innerHTML=DEPARTMENTS.map(d=>`<option>${d}</option>`).join('');
-  document.getElementById('fDesig').innerHTML=DESIGNATIONS.map(d=>`<option>${d}</option>`).join('');
-}
+function populateSelects(){const opts=employees.map(e=>`<option value="${e.id}">${e.name} (${e.code})</option>`).join('');['attEmpSelect','slipEmpSelect'].forEach(id=>{document.getElementById(id).innerHTML='<option value="">— Select Employee —</option>'+opts;});const dOpts='<option value="">All Departments</option>'+DEPARTMENTS.map(d=>`<option>${d}</option>`).join('');['filterDept','bankFilterDept'].forEach(id=>document.getElementById(id).innerHTML=dOpts);document.getElementById('fDept').innerHTML=DEPARTMENTS.map(d=>`<option>${d}</option>`).join('');document.getElementById('fDesig').innerHTML=DESIGNATIONS.map(d=>`<option>${d}</option>`).join('');}
 function showToast(msg){const t=document.getElementById('toast');document.getElementById('toastMsg').textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
-
-// ============================================================
-//  TAB SWITCH
-// ============================================================
-function switchTab(name,el){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');
-  ['dashboard','attendance','payroll','eobi','bank','payslip','report'].forEach(t=>document.getElementById('tab-'+t).classList.toggle('hidden',t!==name));
-  if(name==='payroll')renderPayrollTable();
-  if(name==='eobi')renderEobiTable();
-  if(name==='bank')renderBankList();
-  if(name==='report')renderReports();
-  if(name==='payslip'){const s=document.getElementById('slipEmpSelect');if(s.value)renderPayslip();else document.getElementById('payslipContent').innerHTML='<div class="empty-state">Select an employee to generate pay slip</div>';}
-}
-
-// ============================================================
-//  INIT
-// ============================================================
-(function init(){
-  const cy=new Date().getFullYear(),cm=new Date().getMonth()+1;
-  populateSelects();
-  buildMY('attMonthSel','attYearSel',cm,cy,loadAttendance);
-  buildMY('payMonthSel','payYearSel',cm,cy,renderPayrollTable);
-  buildMY('slipMonthSel','slipYearSel',cm,cy,renderPayslip);
-  buildMY('eobiMonthSel','eobiYearSel',cm,cy,renderEobiTable);
-  buildMY('bankMonthSel','bankYearSel',cm,cy,renderBankList);
-  refreshDashboard();
-})();
+function switchTab(name,el){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');['dashboard','attendance','payroll','eobi','bank','payslip','report'].forEach(t=>document.getElementById('tab-'+t).classList.toggle('hidden',t!==name));if(name==='payroll')renderPayrollTable();if(name==='eobi')renderEobiTable();if(name==='bank')renderBankList();if(name==='report')renderReports();if(name==='payslip'){const s=document.getElementById('slipEmpSelect');if(s.value)renderPayslip();else document.getElementById('payslipContent').innerHTML='<div class="empty-state">Select an employee to generate pay slip</div>';}}
+(function init(){const cy=new Date().getFullYear(),cm=new Date().getMonth()+1;populateSelects();buildMY('attMonthSel','attYearSel',cm,cy,loadAttendance);buildMY('payMonthSel','payYearSel',cm,cy,renderPayrollTable);buildMY('slipMonthSel','slipYearSel',cm,cy,renderPayslip);buildMY('eobiMonthSel','eobiYearSel',cm,cy,renderEobiTable);buildMY('bankMonthSel','bankYearSel',cm,cy,renderBankList);refreshDashboard();})();
 </script>
+</body>
+</html>
